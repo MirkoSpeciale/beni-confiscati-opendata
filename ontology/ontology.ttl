@@ -28,7 +28,7 @@
 exOnt:BeneConfiscato a owl:Class ;
     rdfs:label "Bene Confiscato"@it ;
     rdfs:comment "Bene (mobile, immobile o azienda) sequestrato e confiscato dallo Stato a organizzazioni criminali ai sensi del Codice Antimafia."@it ;
-    owl:equivalentClass wd:Q97523085 .
+    owl:equivalentClass wd:Q536118 .
 
 exOnt:Immobile a owl:Class ;
     rdfs:label "Immobile confiscato"@it ;
