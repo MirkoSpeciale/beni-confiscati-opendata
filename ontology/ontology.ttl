@@ -1,0 +1,179 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix wd:     <http://www.wikidata.org/entity/> .
+@prefix wdt:    <http://www.wikidata.org/prop/direct/> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+@prefix exOnt:  <http://example.org/ontology/beniconfiscati/> .
+
+# ============================================================
+# Ontologia
+# ============================================================
+
+<http://example.org/ontology/beniconfiscati/>
+    a owl:Ontology ;
+    rdfs:label "Ontologia dei Beni Confiscati alla Mafia"@it ;
+    rdfs:comment "Ontologia per la descrizione dei beni (immobili e aziende) confiscati alle organizzazioni criminali in Italia. Fonte dati: ANBSC."@it ;
+    dct:creator "Mirko Speciale" ;
+    dct:source <https://dati.gov.it/> ;
+    owl:versionInfo "1.0" .
+
+
+# ============================================================
+# CLASSI
+# ============================================================
+
+exOnt:BeneConfiscato a owl:Class ;
+    rdfs:label "Bene Confiscato"@it ;
+    rdfs:comment "Bene (mobile, immobile o azienda) sequestrato e confiscato dallo Stato a organizzazioni criminali ai sensi del Codice Antimafia."@it ;
+    owl:equivalentClass wd:Q97523085 .
+
+exOnt:Immobile a owl:Class ;
+    rdfs:label "Immobile confiscato"@it ;
+    rdfs:comment "Bene immobile (abitazione, terreno, locale commerciale, ecc.) oggetto di confisca."@it ;
+    rdfs:subClassOf exOnt:BeneConfiscato ;
+    owl:equivalentClass schema:Place .
+
+exOnt:Azienda a owl:Class ;
+    rdfs:label "Azienda confiscata"@it ;
+    rdfs:comment "Impresa o società oggetto di confisca."@it ;
+    rdfs:subClassOf exOnt:BeneConfiscato ;
+    owl:equivalentClass schema:Organization .
+
+exOnt:Comune a owl:Class ;
+    rdfs:label "Comune"@it ;
+    rdfs:comment "Unità amministrativa comunale italiana."@it ;
+    owl:equivalentClass schema:City ;
+    owl:equivalentClass wd:Q747074 .
+
+exOnt:Provincia a owl:Class ;
+    rdfs:label "Provincia"@it ;
+    rdfs:comment "Unità amministrativa provinciale italiana."@it ;
+    owl:equivalentClass wd:Q15110 .
+
+exOnt:Regione a owl:Class ;
+    rdfs:label "Regione"@it ;
+    rdfs:comment "Regione amministrativa italiana."@it ;
+    owl:equivalentClass wd:Q16110 ;
+    owl:equivalentClass schema:State .
+
+exOnt:Destinatario a owl:Class ;
+    rdfs:label "Destinatario"@it ;
+    rdfs:comment "Ente o soggetto cui il bene confiscato viene assegnato con decreto di destinazione."@it .
+
+exOnt:ProceduraGiudiziaria a owl:Class ;
+    rdfs:label "Procedura giudiziaria"@it ;
+    rdfs:comment "Procedimento legale nell'ambito del quale è avvenuta la confisca."@it .
+
+
+# ============================================================
+# OBJECT PROPERTIES
+# ============================================================
+
+exOnt:situatoIn a owl:ObjectProperty ;
+    rdfs:label "situato in"@it ;
+    rdfs:comment "Collega un bene al comune in cui si trova."@it ;
+    rdfs:domain exOnt:BeneConfiscato ;
+    rdfs:range  exOnt:Comune ;
+    rdfs:subPropertyOf schema:location ;
+    owl:equivalentProperty wdt:P131 .
+
+exOnt:inProvincia a owl:ObjectProperty ;
+    rdfs:label "in provincia"@it ;
+    rdfs:comment "Collega un comune alla sua provincia."@it ;
+    rdfs:domain exOnt:Comune ;
+    rdfs:range  exOnt:Provincia ;
+    rdfs:subPropertyOf schema:containedInPlace ;
+    owl:equivalentProperty wdt:P131 .
+
+exOnt:inRegione a owl:ObjectProperty ;
+    rdfs:label "in regione"@it ;
+    rdfs:comment "Collega una provincia alla sua regione."@it ;
+    rdfs:domain exOnt:Provincia ;
+    rdfs:range  exOnt:Regione ;
+    rdfs:subPropertyOf schema:containedInPlace .
+
+exOnt:assegnatoA a owl:ObjectProperty ;
+    rdfs:label "assegnato a"@it ;
+    rdfs:comment "Collega un bene destinato al soggetto che lo ha ricevuto con decreto."@it ;
+    rdfs:domain exOnt:BeneConfiscato ;
+    rdfs:range  exOnt:Destinatario .
+
+exOnt:soggettoA a owl:ObjectProperty ;
+    rdfs:label "soggetto a procedura"@it ;
+    rdfs:comment "Collega un bene alla procedura giudiziaria che ha originato la confisca."@it ;
+    rdfs:domain exOnt:BeneConfiscato ;
+    rdfs:range  exOnt:ProceduraGiudiziaria .
+
+
+# ============================================================
+# DATATYPE PROPERTIES
+# ============================================================
+
+exOnt:idBene a owl:DatatypeProperty ;
+    rdfs:label "identificatore bene"@it ;
+    rdfs:comment "Codice identificativo univoco del bene (es. I-PA-123-S)."@it ;
+    rdfs:domain exOnt:BeneConfiscato ;
+    rdfs:range  xsd:string .
+
+exOnt:stato a owl:DatatypeProperty ;
+    rdfs:label "stato del bene"@it ;
+    rdfs:comment "Indica se il bene è 'destinato' (assegnato con decreto) o 'in_gestione' (ancora in amministrazione giudiziaria)."@it ;
+    rdfs:domain exOnt:BeneConfiscato ;
+    rdfs:range  xsd:string .
+
+exOnt:categoria a owl:DatatypeProperty ;
+    rdfs:label "categoria"@it ;
+    rdfs:comment "Categoria tipologica del bene (es. Appartamento, Terreno, Società per azioni)."@it ;
+    rdfs:domain exOnt:BeneConfiscato ;
+    rdfs:range  xsd:string .
+
+exOnt:sottocategoria a owl:DatatypeProperty ;
+    rdfs:label "sottocategoria"@it ;
+    rdfs:domain exOnt:BeneConfiscato ;
+    rdfs:range  xsd:string .
+
+exOnt:fineUso a owl:DatatypeProperty ;
+    rdfs:label "fine d'uso"@it ;
+    rdfs:comment "Scopo per cui il bene è stato destinato (es. Fini istituzionali, Fini sociali)."@it ;
+    rdfs:domain exOnt:BeneConfiscato ;
+    rdfs:range  xsd:string .
+
+exOnt:utilizzo a owl:DatatypeProperty ;
+    rdfs:label "utilizzo"@it ;
+    rdfs:comment "Descrizione specifica dell'utilizzo del bene destinato."@it ;
+    rdfs:domain exOnt:BeneConfiscato ;
+    rdfs:range  xsd:string .
+
+exOnt:annoDecreto a owl:DatatypeProperty ;
+    rdfs:label "anno del decreto"@it ;
+    rdfs:comment "Anno in cui è stato emesso il decreto di destinazione del bene."@it ;
+    rdfs:domain exOnt:BeneConfiscato ;
+    rdfs:range  xsd:integer .
+
+exOnt:quotaConfiscata a owl:DatatypeProperty ;
+    rdfs:label "quota confiscata (%)"@it ;
+    rdfs:comment "Percentuale del bene oggetto di confisca (rilevante per beni in comproprietà)."@it ;
+    rdfs:domain exOnt:BeneConfiscato ;
+    rdfs:range  xsd:decimal .
+
+exOnt:codiceISTAT a owl:DatatypeProperty ;
+    rdfs:label "codice ISTAT"@it ;
+    rdfs:comment "Codice identificativo ISTAT del comune (6 cifre)."@it ;
+    rdfs:domain exOnt:Comune ;
+    rdfs:range  xsd:string ;
+    owl:equivalentProperty wdt:P635 .
+
+exOnt:lat a owl:DatatypeProperty ;
+    rdfs:label "latitudine"@it ;
+    rdfs:domain exOnt:Comune ;
+    rdfs:range  xsd:decimal ;
+    owl:equivalentProperty schema:latitude .
+
+exOnt:lon a owl:DatatypeProperty ;
+    rdfs:label "longitudine"@it ;
+    rdfs:domain exOnt:Comune ;
+    rdfs:range  xsd:decimal ;
+    owl:equivalentProperty schema:longitude .

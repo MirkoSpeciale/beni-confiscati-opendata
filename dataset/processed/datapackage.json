@@ -1,0 +1,161 @@
+{
+  "name": "beni-confiscati",
+  "title": "Beni Confiscati alla Mafia in Italia",
+  "description": "Dataset unificato dei beni (immobili e aziende) confiscati alle organizzazioni criminali in Italia, distinti tra beni già destinati e beni ancora in gestione giudiziaria. Fonte: Agenzia Nazionale per l'Amministrazione e la Destinazione dei Beni Sequestrati e Confiscati alla Criminalità Organizzata (ANBSC).",
+  "version": "1.0.0",
+  "keywords": [
+    "beni confiscati",
+    "mafia",
+    "criminalità organizzata",
+    "ANBSC",
+    "open data",
+    "Italia"
+  ],
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0"
+    }
+  ],
+  "sources": [
+    {
+      "title": "ANBSC – Beni destinati",
+      "path": "https://dati.gov.it/view-dataset/dataset?id=beni-confiscati-destinati"
+    },
+    {
+      "title": "ANBSC – Beni in gestione",
+      "path": "https://dati.gov.it/view-dataset/dataset?id=beni-confiscati-in-gestione"
+    }
+  ],
+  "spatial": {
+    "location": "Italia"
+  },
+  "resources": [
+    {
+      "name": "beni-confiscati",
+      "path": "beni-confiscati.csv",
+      "format": "csv",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "name": "tipo",
+            "type": "string"
+          },
+          {
+            "name": "stato",
+            "type": "string"
+          },
+          {
+            "name": "s_bene",
+            "type": "string"
+          },
+          {
+            "name": "genere",
+            "type": "string"
+          },
+          {
+            "name": "categoria",
+            "type": "string"
+          },
+          {
+            "name": "sottocategoria",
+            "type": "string"
+          },
+          {
+            "name": "distretto",
+            "type": "string"
+          },
+          {
+            "name": "NomeComuneValidato",
+            "type": "string"
+          },
+          {
+            "name": "NomeProvinciaValidato",
+            "type": "string"
+          },
+          {
+            "name": "NomeRegioneValidato",
+            "type": "string"
+          },
+          {
+            "name": "CODISTAT",
+            "type": "string"
+          },
+          {
+            "name": "CODISTATPROV",
+            "type": "string"
+          },
+          {
+            "name": "CODISTATREG",
+            "type": "number"
+          },
+          {
+            "name": "indirizzo",
+            "type": "string"
+          },
+          {
+            "name": "ufficio",
+            "type": "string"
+          },
+          {
+            "name": "procedura",
+            "type": "string"
+          },
+          {
+            "name": "tipologia",
+            "type": "string"
+          },
+          {
+            "name": "destinatario",
+            "type": "string"
+          },
+          {
+            "name": "fine",
+            "type": "string"
+          },
+          {
+            "name": "utilizzo",
+            "type": "string"
+          },
+          {
+            "name": "decreto_numero",
+            "type": "number"
+          },
+          {
+            "name": "decreto_anno",
+            "type": "integer"
+          },
+          {
+            "name": "decreto_data",
+            "type": "string"
+          },
+          {
+            "name": "provvedimento",
+            "type": "string"
+          },
+          {
+            "name": "quota_confiscata",
+            "type": "number"
+          },
+          {
+            "name": "ufficio_giudiziario",
+            "type": "string"
+          },
+          {
+            "name": "tipologia_procedura",
+            "type": "string"
+          },
+          {
+            "name": "lat",
+            "type": "number"
+          },
+          {
+            "name": "lon",
+            "type": "number"
+          }
+        ]
+      }
+    }
+  ]
+}

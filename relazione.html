@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beni Confiscati alla Mafia — Relazione Open Data</title>
+<style>
+  :root {
+    --rosso:#8b1a1a; --rosso-l:#c0392b; --rosso-pale:#fff0f0;
+    --verde:#1a6b1a; --verde-pale:#f0fff0;
+    --blu:#1a3a6b; --blu-pale:#f0f4ff;
+    --arancio:#b35900;
+    --testo:#1e1e1e; --testo2:#555; --bg:#fafafa; --card:#fff;
+    --border:#ddd; --accent:#e8d5b7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Georgia',serif;color:var(--testo);background:var(--bg);line-height:1.8;font-size:1.0rem;}
+
+  /* NAV */
+  nav{position:sticky;top:0;background:var(--rosso);z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.35);}
+  nav ul{display:flex;flex-wrap:wrap;list-style:none;max-width:1100px;margin:0 auto;padding:0 1rem;}
+  nav ul li a{display:block;padding:.65rem .85rem;color:#fff;text-decoration:none;font-family:sans-serif;font-size:.78rem;letter-spacing:.04em;transition:background .2s;}
+  nav ul li a:hover{background:rgba(255,255,255,.18);}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#1a0000 0%,#5c0a0a 40%,var(--rosso) 100%);color:#fff;padding:4.5rem 2rem 3rem;text-align:center;}
+  .hero h1{font-size:2.5rem;letter-spacing:.03em;margin-bottom:.6rem;}
+  .hero .sub{font-size:1.1rem;opacity:.85;margin-bottom:1.8rem;font-style:italic;}
+  .hero .meta{display:flex;justify-content:center;gap:1.2rem;flex-wrap:wrap;font-family:sans-serif;font-size:.82rem;}
+  .badge{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:.3rem 1rem;}
+
+  /* LAYOUT */
+  .container{max-width:960px;margin:0 auto;padding:0 1.8rem;}
+  section{padding:3.5rem 0 2.5rem;border-bottom:1px solid var(--border);}
+  section:last-child{border-bottom:none;}
+
+  /* HEADINGS */
+  h2{font-size:1.75rem;color:var(--rosso);margin-bottom:1.2rem;padding-bottom:.5rem;border-bottom:3px solid var(--accent);}
+  h3{font-size:1.15rem;color:var(--rosso);margin:2rem 0 .7rem;font-family:sans-serif;}
+  h4{font-size:1rem;color:var(--testo2);margin:1.3rem 0 .4rem;font-family:sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.05em;font-size:.85rem;}
+  p{margin-bottom:1.1rem;}
+  ul,ol{margin:.5rem 0 1.2rem 1.8rem;}
+  li{margin-bottom:.5rem;}
+
+  /* KPI */
+  .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin:1.8rem 0;}
+  .kpi{background:var(--card);border-left:4px solid var(--rosso);border-radius:5px;padding:1rem 1.2rem;box-shadow:0 1px 5px rgba(0,0,0,.07);}
+  .kpi .num{font-size:1.9rem;font-weight:bold;color:var(--rosso);font-family:sans-serif;line-height:1;}
+  .kpi .lbl{font-size:.75rem;color:var(--testo2);font-family:sans-serif;margin-top:.3rem;text-transform:uppercase;letter-spacing:.06em;}
+
+  /* PROBLEMA / SOLUZIONE */
+  .pb{background:var(--rosso-pale);border:1px solid #f5c6c6;border-left:5px solid var(--rosso-l);border-radius:5px;padding:1.2rem 1.5rem;margin:1.2rem 0;}
+  .pb .tag,.sl .tag{font-size:.7rem;font-family:sans-serif;font-weight:bold;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem;}
+  .pb .tag{color:var(--rosso-l);}
+  .sl{background:var(--verde-pale);border:1px solid #b8e0b8;border-left:5px solid var(--verde);border-radius:5px;padding:1.2rem 1.5rem;margin:1.2rem 0;}
+  .sl .tag{color:var(--verde);}
+
+  /* NOTE BOX */
+  .note{background:var(--blu-pale);border:1px solid #b8cef5;border-left:5px solid var(--blu);border-radius:5px;padding:1.1rem 1.4rem;margin:1.2rem 0;font-size:.92rem;}
+  .note strong{color:var(--blu);}
+
+  /* LICENZA BOX */
+  .license-box{background:#fffbf0;border:1px solid #f0d080;border-left:5px solid var(--arancio);border-radius:5px;padding:1.2rem 1.5rem;margin:1.2rem 0;}
+  .license-box .license-name{font-family:sans-serif;font-weight:bold;color:var(--arancio);font-size:1.05rem;margin-bottom:.5rem;}
+
+  /* CODE */
+  pre{background:#1e1e1e;color:#d4d4d4;padding:1.2rem 1.4rem;border-radius:7px;overflow-x:auto;font-size:.8rem;margin:1rem 0;line-height:1.55;}
+  code{font-family:'Consolas','Courier New',monospace;}
+  p code,li code{background:#f0f0f0;padding:.1em .45em;border-radius:3px;font-size:.87em;color:#8b1a1a;}
+
+  /* TABELLE */
+  .table-wrap{overflow-x:auto;margin:1rem 0;}
+  table{width:100%;border-collapse:collapse;font-family:sans-serif;font-size:.84rem;}
+  th{background:var(--rosso);color:#fff;padding:.55rem .85rem;text-align:left;white-space:nowrap;}
+  td{padding:.45rem .85rem;border-bottom:1px solid var(--border);vertical-align:top;}
+  tr:nth-child(even) td{background:#fafafa;}
+  tr:hover td{background:#fff5f5;}
+
+  /* ONTOLOGIA */
+  .chip{display:inline-block;border-radius:4px;padding:.15rem .55rem;font-family:monospace;font-size:.84em;margin:.15rem;}
+  .chip-cls{background:#e3f2fd;border:1px solid #90caf9;color:#1565c0;}
+  .chip-obj{background:#f3e5f5;border:1px solid #ce93d8;color:#6a1b9a;}
+  .chip-dat{background:#e8f5e9;border:1px solid #a5d6a7;color:#1b5e20;}
+
+  /* SPARQL */
+  .sparql{background:#0d1117;color:#79c0ff;padding:1.2rem 1.4rem;border-radius:7px;font-family:monospace;font-size:.8rem;margin:1rem 0;overflow-x:auto;line-height:1.6;}
+  .sparql .kw{color:#ff7b72;} .sparql .uri{color:#a5d6ff;} .sparql .var{color:#ffa657;} .sparql .cm{color:#8b949e;}
+
+  /* TIMELINE */
+  .timeline{border-left:3px solid var(--rosso);padding-left:1.8rem;margin:1.5rem 0;}
+  .tl-item{margin-bottom:1.3rem;position:relative;}
+  .tl-item::before{content:'';position:absolute;left:-2rem;top:.4rem;width:11px;height:11px;border-radius:50%;background:var(--rosso);border:2px solid #fff;box-shadow:0 0 0 2px var(--rosso);}
+  .tl-item .year{font-family:sans-serif;font-size:.78rem;font-weight:bold;color:var(--rosso);text-transform:uppercase;letter-spacing:.06em;}
+
+  /* LINK CARDS */
+  .link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.2rem 0;}
+  .link-card{background:var(--card);border:1px solid var(--border);border-radius:7px;padding:1rem 1.2rem;text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,border-color .2s;}
+  .link-card:hover{box-shadow:0 4px 14px rgba(0,0,0,.12);border-color:var(--rosso);}
+  .link-card .lt{font-family:sans-serif;font-weight:bold;color:var(--rosso);margin-bottom:.3rem;}
+  .link-card .ld{font-size:.8rem;color:var(--testo2);}
+
+  footer{background:#1e1e1e;color:#aaa;text-align:center;padding:1.8rem;font-family:sans-serif;font-size:.82rem;}
+  footer a{color:#ddd;}
+
+  .sep{border:none;border-top:2px solid var(--accent);margin:2rem 0;}
+</style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#motivazioni">Motivazioni</a></li>
+    <li><a href="#dataset">Dataset</a></li>
+    <li><a href="#licenze">Licenze</a></li>
+    <li><a href="#cleaning">Data Cleaning</a></li>
+    <li><a href="#frictionless">Frictionless</a></li>
+    <li><a href="#problemi">Problemi & Soluzioni</a></li>
+    <li><a href="#analisi">Analisi</a></li>
+    <li><a href="#ontologia">Ontologia</a></li>
+    <li><a href="#interlinking">Interlinking</a></li>
+    <li><a href="#conclusioni">Conclusioni</a></li>
+    <li><a href="#link">Link Utili</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <h1>🏛️ Beni Confiscati alla Mafia in Italia</h1>
+  <p class="sub">Progetto Open Data · Analisi, Ontologia RDF e Interlinking con Wikidata</p>
+  <div class="meta">
+    <span class="badge">👤 Mirko Speciale</span>
+    <span class="badge">🎓 UNIPA — Dipartimento di Matematica ed Informatica</span>
+    <span class="badge">📚 Corso: Open Data</span>
+    <span class="badge">📅 A.A. 2025/2026</span>
+    <span class="badge">📦 Fonte: ANBSC / confiscatibene.it</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ========== ABSTRACT ========== -->
+<section id="abstract">
+  <h2>1. Abstract</h2>
+  <p>Questo progetto didattico sviluppa una pipeline completa di <strong>Open Data engineering</strong> applicata al dominio dei beni sequestrati e confiscati alle organizzazioni criminali italiane. Il dataset di riferimento, pubblicato dall'<strong>Agenzia Nazionale per i Beni Sequestrati e Confiscati (ANBSC)</strong> tramite la piattaforma <a href="https://www.confiscatibene.it/dataset/openregio" target="_blank">confiscatibene.it</a>, viene integrato, pulito, analizzato, formalizzato in un'ontologia OWL e collegato al grafo della conoscenza globale Wikidata.</p>
+  <p>Il lavoro si articola in quattro macro-fasi: (1) <em>data integration</em> di quattro sorgenti CSV eterogenee in un dataset unificato conforme allo standard Frictionless Data; (2) <em>analisi esplorativa</em> con sei visualizzazioni statiche e un dashboard interattivo; (3) <em>knowledge engineering</em> con la definizione di un'ontologia OWL 2 in formato Turtle e la sua popolazione tramite rdflib; (4) <em>interlinking</em> verso Wikidata tramite <code>owl:sameAs</code> e query SPARQL federate.</p>
+
+  <div class="kpi-grid">
+    <div class="kpi"><div class="num">36.301</div><div class="lbl">Beni totali</div></div>
+    <div class="kpi"><div class="num">32.327</div><div class="lbl">Immobili</div></div>
+    <div class="kpi"><div class="num">3.974</div><div class="lbl">Aziende</div></div>
+    <div class="kpi"><div class="num">20</div><div class="lbl">Regioni</div></div>
+    <div class="kpi"><div class="num">106</div><div class="lbl">Province</div></div>
+    <div class="kpi"><div class="num">1.798</div><div class="lbl">Comuni</div></div>
+    <div class="kpi"><div class="num">259.626</div><div class="lbl">Triple RDF</div></div>
+    <div class="kpi"><div class="num">1.766</div><div class="lbl">owl:sameAs</div></div>
+  </div>
+</section>
+
+<!-- ========== MOTIVAZIONI ========== -->
+<section id="motivazioni">
+  <h2>2. Motivazioni e Obiettivi</h2>
+  <p>La lotta alla criminalità organizzata in Italia non si esaurisce con l'arresto dei boss: uno degli strumenti più potenti e meno conosciuti del sistema giuridico italiano è la <strong>confisca dei beni</strong>. Sulla base del Codice Antimafia (D.Lgs. 159/2011), le organizzazioni criminali possono essere private del loro patrimonio illecito — ville, terreni, aziende, appartamenti — che viene successivamente restituito alla collettività. Una villa della camorra può diventare una cooperativa sociale; un appartamento della 'ndrangheta, un alloggio per famiglie in difficoltà; un'azienda di Cosa Nostra, una realtà produttiva legale gestita da lavoratori onesti.</p>
+  <p>Nonostante l'enorme rilevanza sociale, politica ed economica di questo fenomeno, i dati pubblicati dall'ANBSC presentano significativi limiti di usabilità: sono distribuiti in quattro file separati con strutture inconsistenti, privi di coordinate geografiche precise, senza collegamenti ad altre fonti di dati e in un formato non ottimizzato per l'analisi automatizzata. Questo progetto si propone di superare questi limiti con i seguenti obiettivi:</p>
+  <ol>
+    <li><strong>Integrare e normalizzare</strong> i quattro dataset CSV in un'unica fonte coerente e machine-readable;</li>
+    <li><strong>Arricchire</strong> il dataset con le coordinate geografiche comunali (proprietà P625 di Wikidata), non presenti nell'originale;</li>
+    <li><strong>Analizzare</strong> la distribuzione geografica, temporale e tipologica dei beni confiscati tramite visualizzazioni;</li>
+    <li><strong>Formalizzare</strong> la conoscenza del dominio in un'ontologia OWL 2 riutilizzabile e interoperabile;</li>
+    <li><strong>Collegare</strong> il dataset al Web of Data tramite <code>owl:sameAs</code> verso Wikidata, rendendo ogni comune italiano interrogabile via SPARQL.</li>
+  </ol>
+</section>
+
+<!-- ========== DATASET ========== -->
+<section id="dataset">
+  <h2>3. Selezione e Descrizione dei Dataset</h2>
+
+  <h3>3.1 Fonte dei dati</h3>
+  <p>I dati provengono dall'<strong>Agenzia Nazionale per i Beni Sequestrati e Confiscati alla Criminalità Organizzata (ANBSC)</strong>, l'ente governativo italiano istituito con il D.L. 4 febbraio 2010, n. 4, responsabile della gestione e destinazione dei beni sottratti alla criminalità organizzata. I dataset sono disponibili sulla piattaforma civica <a href="https://www.confiscatibene.it/dataset/openregio" target="_blank">confiscatibene.it</a>, che aggrega e rende accessibili in formato aperto i dati pubblicati dall'ANBSC, rendendoli più facilmente scaricabili e consultabili rispetto ai file originali.</p>
+
+  <h3>3.2 I quattro file CSV originali</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>File</th><th>Contenuto</th><th>Righe (approx.)</th><th>Caratteristiche principali</th></tr>
+    <tr>
+      <td><code>Immobili destinati.csv</code></td>
+      <td>Beni immobili con decreto di destinazione emesso</td>
+      <td>22.718</td>
+      <td>Include destinatario, fine d'uso, anno decreto, numero procedura</td>
+    </tr>
+    <tr>
+      <td><code>Immobili in gestione.csv</code></td>
+      <td>Beni immobili ancora sotto amministrazione giudiziaria</td>
+      <td>10.531</td>
+      <td>Include quota confiscata, ufficio giudiziario, tipologia procedura. Presenta colonne aggiuntive rispetto ai destinati</td>
+    </tr>
+    <tr>
+      <td><code>Aziende destinate.csv</code></td>
+      <td>Aziende e imprese con decreto di destinazione</td>
+      <td>2.424</td>
+      <td>Forma societaria (SRL, SAS, SNC...), settore economico</td>
+    </tr>
+    <tr>
+      <td><code>Aziende in gestione.csv</code></td>
+      <td>Aziende ancora in fase di gestione giudiziaria</td>
+      <td>628</td>
+      <td>Analoga struttura con colonne aggiuntive di gestione</td>
+    </tr>
+  </table>
+  </div>
+
+  <h3>3.3 Struttura del dataset processato</h3>
+  <p>Dopo la fase di integrazione e pulizia, i quattro file sono stati unificati in un CSV da <strong>36.301 righe e 29 colonne</strong>. Di seguito lo schema completo:</p>
+  <p class="note" style="margin-bottom:.5rem"><strong>Totale righe nel dataset: 36.301.</strong> La colonna <em>Null</em> indica i valori mancanti; <em>Compilati</em> = 36.301 − Null.</p>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Colonna</th><th>Tipo</th><th>Descrizione</th><th>Null</th><th>Compilati</th><th>Valori unici</th></tr>
+    <tr><td><code>tipo</code></td><td>string</td><td>Tipo di bene: <em>immobile</em> o <em>azienda</em></td><td>0</td><td>36.301</td><td>2</td></tr>
+    <tr><td><code>stato</code></td><td>string</td><td>Stato: <em>destinato</em> o <em>in_gestione</em></td><td>0</td><td>36.301</td><td>2</td></tr>
+    <tr><td><code>s_bene</code></td><td>string</td><td>ID univoco del bene (es. <em>I-PA-123-S</em>)</td><td>3.738</td><td>32.563</td><td>32.528</td></tr>
+    <tr><td><code>genere</code></td><td>string</td><td>Genere del bene (immobili / aziende)</td><td>0</td><td>36.301</td><td>2</td></tr>
+    <tr><td><code>categoria</code></td><td>string</td><td>Categoria tipologica (17 valori distinti)</td><td>0</td><td>36.301</td><td>17</td></tr>
+    <tr><td><code>sottocategoria</code></td><td>string</td><td>Sottocategoria (49 valori distinti)</td><td>336</td><td>35.965</td><td>49</td></tr>
+    <tr><td><code>distretto</code></td><td>string</td><td>Distretto giudiziario di riferimento</td><td>0</td><td>36.301</td><td>171</td></tr>
+    <tr><td><code>NomeComuneValidato</code></td><td>string</td><td>Nome comune normalizzato</td><td>85</td><td>36.216</td><td>1.797</td></tr>
+    <tr><td><code>NomeProvinciaValidato</code></td><td>string</td><td>Nome provincia normalizzato</td><td>12</td><td>36.289</td><td>106</td></tr>
+    <tr><td><code>NomeRegioneValidato</code></td><td>string</td><td>Nome regione normalizzato</td><td>12</td><td>36.289</td><td>20</td></tr>
+    <tr><td><code>CODISTAT</code></td><td>string (6 cifre)</td><td>Codice ISTAT comune, zero-padded</td><td>0</td><td>36.301</td><td>1.798</td></tr>
+    <tr><td><code>CODISTATPROV</code></td><td>float→string (3 cifre)</td><td>Codice ISTAT provincia, zero-padded</td><td>13</td><td>36.288</td><td>105</td></tr>
+    <tr><td><code>CODISTATREG</code></td><td>float</td><td>Codice ISTAT regione</td><td>13</td><td>36.288</td><td>20</td></tr>
+    <tr><td><code>indirizzo</code></td><td>string</td><td>Indirizzo del bene</td><td>20.858</td><td>15.443</td><td>8.238</td></tr>
+    <tr><td><code>ufficio</code></td><td>string</td><td>Tipo ufficio giudiziario (solo destinati)</td><td>20.475</td><td>15.826</td><td>5</td></tr>
+    <tr><td><code>procedura</code></td><td>string</td><td>Numero procedura giudiziaria</td><td>20.475</td><td>15.826</td><td>1.556</td></tr>
+    <tr><td><code>destinatario</code></td><td>string</td><td>Ente assegnatario (solo destinati)</td><td>21.571</td><td>14.730</td><td>21</td></tr>
+    <tr><td><code>fine</code></td><td>string</td><td>Fine d'uso dichiarato</td><td>23.344</td><td>12.957</td><td>11</td></tr>
+    <tr><td><code>utilizzo</code></td><td>string</td><td>Descrizione utilizzo specifico</td><td>30.577</td><td>5.724</td><td>813</td></tr>
+    <tr><td><code>decreto_numero</code></td><td>float</td><td>Numero del decreto di destinazione</td><td>20.475</td><td>15.826</td><td>5.253</td></tr>
+    <tr><td><code>decreto_anno</code></td><td>Int64</td><td>Anno del decreto (1964–2019)</td><td>20.475</td><td>15.826</td><td>41</td></tr>
+    <tr><td><code>decreto_data</code></td><td>string</td><td>Data completa del decreto</td><td>20.476</td><td>15.825</td><td>1.978</td></tr>
+    <tr><td><code>quota_confiscata</code></td><td>float</td><td>Percentuale confiscata (beni in comproprietà)</td><td>18.776</td><td>17.525</td><td>86</td></tr>
+    <tr><td><code>ufficio_giudiziario</code></td><td>string</td><td>Ufficio giudiziario competente</td><td>15.826</td><td>20.475</td><td>4</td></tr>
+    <tr><td><code>tipologia_procedura</code></td><td>string</td><td>Tipo di procedura (prevenzione/penale)</td><td>15.826</td><td>20.475</td><td>2</td></tr>
+    <tr><td><code>lat</code></td><td>float</td><td>Latitudine del comune (da Wikidata P625, <em>campo aggiunto</em>)</td><td>557</td><td>35.744</td><td>1.461</td></tr>
+    <tr><td><code>lon</code></td><td>float</td><td>Longitudine del comune (da Wikidata P625, <em>campo aggiunto</em>)</td><td>557</td><td>35.744</td><td>1.461</td></tr>
+  </table>
+  </div>
+
+  <div class="note">
+    <strong>Nota sui campi geografici aggiunti:</strong> I campi <code>lat</code> e <code>lon</code> non sono presenti nel dataset originale ANBSC. Sono stati aggiunti nella pipeline di cleaning tramite join con <code>wikidata_comuni.csv</code> sul codice ISTAT comune (<code>CODISTAT</code>), recuperando le coordinate geografiche comunali dalla proprietà <strong>P625</strong> di Wikidata (v. sezione 5.7). La copertura è del 98,5% (35.744 beni su 36.301); i 557 beni non coperti appartengono a comuni il cui codice ISTAT non ha una corrispondenza P625 su Wikidata (comuni fusi, frazioni, o codici assenti nel dataset originale).</p>
+
+  <div class="license-box">
+    <div class="license-name">🔓 CC BY 4.0 — Creative Commons Attribution 4.0 International</div>
+    <p><strong>Permesso:</strong> riutilizzo, modifica, ridistribuzione e uso commerciale, anche senza richiedere autorizzazione esplicita.</p>
+    <p><strong>Obbligo unico:</strong> citare la fonte originale (ANBSC) con attribuzione appropriata.</p>
+    <p><strong>Non richiede:</strong> ShareAlike (non è obbligatorio ridistribuire le opere derivate sotto la stessa licenza), contrariamente alla variante CC BY-SA.</p>
+    <p><strong>URL della licenza:</strong> <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">https://creativecommons.org/licenses/by/4.0/</a></p>
+  </div>
+
+  <p>Questa licenza è pienamente compatibile con gli standard internazionali del Web Semantico e del Linked Open Data, e in particolare con i requisiti del <a href="https://5stardata.info" target="_blank">modello 5 stelle degli Open Data</a> di Tim Berners-Lee.</p>
+
+  <h3>4.2 Licenza del dataset Wikidata</h3>
+  <p>I dati Wikidata usati per l'interlinking (mapping ISTAT → URI) sono rilasciati sotto <strong>Creative Commons CC0 1.0 Universal (Public Domain Dedication)</strong>: nessuna restrizione, nessun obbligo di attribuzione. Questo rende Wikidata la fonte ideale per linked open data.</p>
+
+  <div class="license-box">
+    <div class="license-name">🌐 CC0 1.0 — Public Domain Dedication (Wikidata)</div>
+    <p><strong>Permesso:</strong> utilizzo, copia, modifica, distribuzione senza restrizioni, anche per uso commerciale.</p>
+    <p><strong>Obbligo:</strong> nessuno. La rinuncia ai diritti d'autore è totale e irrevocabile.</p>
+    <p><strong>URL:</strong> <a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank">https://creativecommons.org/publicdomain/zero/1.0/</a></p>
+  </div>
+
+  <h3>4.3 Licenza del progetto derivato</h3>
+  <p>Poiché il dataset sorgente (ANBSC) è CC BY 4.0, questo progetto derivato può essere rilasciato sotto qualsiasi licenza compatibile. La scelta raccomandata per massimizzare l'interoperabilità con il Web of Data è <strong>CC BY 4.0</strong> o <strong>CC0</strong>. Il presente progetto adotta <strong>CC BY 4.0</strong> con attribuzione a "Mirko Speciale — UNIPA, 2026, basato su dati ANBSC".</p>
+
+  <h3>4.4 Compatibilità con il Modello 5 Stelle</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Stella</th><th>Criterio</th><th>Questo progetto</th></tr>
+    <tr><td>⭐</td><td>Dati disponibili sul web (qualsiasi formato, licenza aperta)</td><td>✅ CSV su confiscatibene.it, CC BY 4.0</td></tr>
+    <tr><td>⭐⭐</td><td>Dati strutturati machine-readable (es. Excel invece di scan PDF)</td><td>✅ CSV strutturato + Frictionless datapackage</td></tr>
+    <tr><td>⭐⭐⭐</td><td>Formato non proprietario (es. CSV invece di XLS)</td><td>✅ CSV + Turtle (RDF)</td></tr>
+    <tr><td>⭐⭐⭐⭐</td><td>Uso di URI per identificare le cose</td><td>✅ URI per ogni bene, comune, provincia, regione</td></tr>
+    <tr><td>⭐⭐⭐⭐⭐</td><td>Link ad altri dati (Linked Open Data)</td><td>✅ owl:sameAs verso Wikidata per 1.766 comuni</td></tr>
+  </table>
+  </div>
+</section>
+
+<!-- ========== CLEANING ========== -->
+<section id="cleaning">
+  <h2>5. Fase di Data Cleaning e Pre-processing</h2>
+
+  <p>Il notebook <code>cleaning.ipynb</code> implementa una pipeline di pulizia strutturata in sette fasi, che trasforma quattro file CSV eterogenei in un unico dataset unificato, tipizzato correttamente e arricchito geograficamente. Di seguito si descrive ogni fase nel dettaglio, motivando le scelte adottate.</p>
+
+  <h3>5.1 Struttura della fonte: quattro file con schemi diversi</h3>
+  <p>L'ANBSC pubblica i dati in quattro file distinti, che riflettono la distinzione amministrativa fondamentale del progetto:</p>
+
+  <table>
+    <thead><tr><th>File</th><th>Tipo bene</th><th>Stato</th><th>Righe</th></tr></thead>
+    <tbody>
+      <tr><td><code>Immobili destinati.csv</code></td><td>Immobile</td><td>Destinato</td><td>22.718</td></tr>
+      <tr><td><code>Immobili in gestione.csv</code></td><td>Immobile</td><td>In gestione</td><td>10.531</td></tr>
+      <tr><td><code>Aziende destinate.csv</code></td><td>Azienda</td><td>Destinata</td><td>2.424</td></tr>
+      <tr><td><code>Aziende in gestione.csv</code></td><td>Azienda</td><td>In gestione</td><td>628</td></tr>
+      <tr><td colspan="3"><strong>Totale</strong></td><td><strong>36.301</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="pb">
+    <div class="tag">🔴 Problema — Nomi di colonna incoerenti tra file</div>
+    <p>I file <em>destinati</em> usano nomi di colonna brevi come <code>regione</code>, <code>provincia</code>, <code>comune</code>, mentre i file <em>in gestione</em> usano il prefisso <code>nome_</code> (<code>nome_regione</code>, <code>nome_provincia</code>, <code>nome_comune</code>). Entrambi i gruppi includono però le varianti validate <code>NomeRegioneValidato</code>, <code>NomeProvinciaValidato</code>, <code>NomeComuneValidato</code>. Concatenerli direttamente con <code>pd.concat</code> avrebbe prodotto colonne duplicate e valori in colonne errate.</p>
+    <p>Analogamente, i file <em>destinati</em> contengono colonne specifiche (<code>decreto_numero</code>, <code>decreto_anno</code>, <code>destinatario</code>, <code>fine</code>, <code>utilizzo</code>) assenti nei file <em>in gestione</em>, e viceversa (<code>quota_confiscata</code>, <code>tipologia_procedura</code>). Una concatenazione naïve avrebbe generato un dataset con colonne non allineate e dati nel posto sbagliato.</p>
+  </div>
+
+  <div class="sl">
+    <div class="tag">✅ Soluzione — Funzione <code>prepara_dataframe()</code></div>
+    <p>Per garantire uno schema uniforme prima della concatenazione, è stata implementata la funzione <code>prepara_dataframe(df, tipo, stato)</code>, che esegue tre operazioni nell'ordine:</p>
+    <ol>
+      <li><strong>Risoluzione degli alias</strong>: tramite un dizionario <code>ALIAS</code>, le colonne con nome alternativo vengono rinominate alla versione canonica. Se la colonna di destinazione esiste già nel DataFrame (caso dei file <em>in gestione</em> che hanno sia <code>nome_provincia</code> sia <code>NomeProvinciaValidato</code>), quella con il nome non canonico viene semplicemente eliminata per evitare duplicati:
+        <pre><code>ALIAS = {
+    'nome_regione':   'NomeRegioneValidato',
+    'nome_provincia': 'NomeProvinciaValidato',
+    'nome_comune':    'NomeComuneValidato',
+}
+for src, dst in ALIAS.items():
+    if src in df.columns:
+        if dst in df.columns:   # già presente → elimina il duplicato
+            df = df.drop(columns=[src])
+        else:
+            df = df.rename(columns={src: dst})</code></pre>
+      </li>
+      <li><strong>Completamento dello schema</strong>: tutte le colonne del dataset finale che non sono presenti nel file corrente vengono aggiunte come colonne di <code>NaN</code>. Questo rende ogni DataFrame "largo" quanto lo schema completo, così <code>pd.concat</code> non genera colonne spurie.</li>
+      <li><strong>Etichettatura della provenienza</strong>: vengono aggiunte le colonne <code>tipo</code> (<code>'immobile'</code> / <code>'azienda'</code>) e <code>stato</code> (<code>'destinato'</code> / <code>'in_gestione'</code>). Queste due colonne sono artificiali — non esistono nella fonte — ma sono indispensabili per tutte le analisi comparative del progetto.</li>
+    </ol>
+  </div>
+
+  <h3>5.2 Concatenazione in un unico DataFrame</h3>
+  <p>Dopo la preparazione dei quattro DataFrame, la concatenazione avviene con <code>pd.concat([...], ignore_index=True)</code>, che produce un DataFrame da 36.301 righe e 29 colonne. La struttura dei valori nulli riflette la natura della fonte: un bene <em>in gestione</em> non ha ancora ricevuto un decreto, quindi le colonne <code>decreto_numero</code>, <code>decreto_anno</code>, <code>destinatario</code>, <code>fine</code> e <code>utilizzo</code> sono NaN per tutti i 11.159 beni in gestione. Analogamente, <code>quota_confiscata</code> e <code>tipologia_procedura</code> sono NaN per i 25.142 beni destinati.</p>
+
+  <p>Questa asimmetria è intenzionale e corretta: i NaN non indicano dati mancanti per errore, ma riflettono il fatto che alcune informazioni esistono solo per un sottoinsieme logico dei beni.</p>
+
+  <h3>5.3 Normalizzazione dei codici ISTAT</h3>
+  <p>I codici ISTAT sono identificatori numerici con zero-padding obbligatorio: il codice provincia deve essere una stringa di 3 cifre (<code>082</code> per Palermo), il codice comune di 6 cifre (<code>082053</code> per Palermo città). Nel dataset ANBSC, tuttavia, queste colonne sono memorizzate come numeri interi originariamente, e il passaggio per Excel durante la pubblicazione li ha convertiti in <code>float</code>:</p>
+
+  <pre><code># Situazione nel file raw:
+df['CODISTATPROV'].dtype   # float64
+df['CODISTATPROV'].head()  # → 82.0, 87.0, 15.0, ...
+df['CODISTAT'].head()      # → 82053.0, 87015.0, 15120.0, ...</code></pre>
+
+  <div class="pb">
+    <div class="tag">🔴 Problema — Codici ISTAT come float con suffisso <code>.0</code></div>
+    <p>Un codice ISTAT letto come <code>float</code> e convertito direttamente in stringa diventa <code>"82.0"</code> invece di <code>"082"</code>. Con questo formato, il lookup geografico e il join con Wikidata fallirebbero silenziosamente: nessuna riga verrebbe abbinata perché le chiavi non corrispondono.</p>
+  </div>
+
+  <div class="sl">
+    <div class="tag">✅ Soluzione — Strip del <code>.0</code> e zero-padding</div>
+    <p>La pulizia avviene in tre passi concatenati per ogni codice:</p>
+    <pre><code>df['CODISTATPROV'] = (
+    df['CODISTATPROV']
+    .astype(str)                          # 82.0  → "82.0"
+    .str.replace(r'\.0$', '', regex=True)  # "82.0" → "82"
+    .str.zfill(3)                         # "82"  → "082"
+)
+
+df['CODISTAT'] = (
+    df['CODISTAT']
+    .astype(str)
+    .str.replace(r'\.0$', '', regex=True)
+    .str.zfill(6)                         # "82053" → "082053"
+)</code></pre>
+    <p>Il risultato è verificabile: tutti i valori di <code>CODISTATPROV</code> sono stringhe di esattamente 3 caratteri, tutti quelli di <code>CODISTAT</code> di 6 caratteri, senza nessun <code>.0</code> residuo.</p>
+  </div>
+
+  <h3>5.4 Tipizzazione di <code>decreto_anno</code>: il problema degli interi nullable</h3>
+  <p>La colonna <code>decreto_anno</code> contiene l'anno del decreto di destinazione. È presente solo per i 25.142 beni destinati; per i restanti 11.159 beni in gestione il valore è NaN. In Python/pandas, il tipo <code>int64</code> standard non supporta valori NaN (che vengono promossi automaticamente a <code>float64</code>, portando a valori come <code>2018.0</code>). La soluzione adottata è il tipo <code>Int64</code> nullable (con la <em>I</em> maiuscola), introdotto in pandas come extension type:</p>
+
+  <pre><code>df['decreto_anno'] = pd.to_numeric(df['decreto_anno'], errors='coerce').astype('Int64')
+# Risultato: 2018, 2021, &lt;NA&gt;, 2015, &lt;NA&gt;, ...  (interi veri, non float)</code></pre>
+
+  <p>Questo consente di usare la colonna per analisi temporali (conteggio decreti per anno, trend) senza dover gestire il suffisso <code>.0</code> nella visualizzazione, e senza perdere i beni in gestione che legittimamente non hanno ancora un anno di decreto.</p>
+
+  <h3>5.5 Correzione di <code>quota_confiscata</code>: lo zero che non è zero</h3>
+  <p>Nei file <em>in gestione</em>, il campo <code>quota_confiscata</code> rappresenta la percentuale del bene sottoposta a confisca (es. <code>50.0</code> per una quota del 50%). Tuttavia, nei record in cui il dato non era disponibile al momento dell'export ANBSC, il campo risulta valorizzato con <code>0</code> — non come vero valore zero (che non avrebbe senso: un bene con quota confiscata = 0% non sarebbe confiscato), ma come placeholder per "non compilato".</p>
+
+  <div class="sl">
+    <div class="tag">✅ Soluzione — Sostituzione degli zeri semanticamente vuoti con NaN</div>
+    <pre><code>mask_gest = df['stato'] == 'in_gestione'
+df.loc[mask_gest &amp; (df['quota_confiscata'] == 0), 'quota_confiscata'] = np.nan</code></pre>
+    <p>La maschera applica la sostituzione <em>solo</em> ai beni in gestione: per i beni destinati uno <code>0</code> potrebbe in teoria essere legittimo (anche se raro), quindi non viene toccato. Questa distinzione semantica preserva l'integrità dei dati evitando sostituzioni indiscriminate.</p>
+  </div>
+
+  <h3>5.6 Pulizia dei campi testuali</h3>
+  <p>Diversi campi stringa del dataset presentano problemi tipici dei dati esportati manualmente: spazi iniziali/finali, valori testuali sentinella come <code>"nan"</code> (stringa letterale prodotta da Python quando un NaN viene convertito in stringa e poi re-importato) o stringhe vuote che non sono NaN riconoscibili da pandas. La pulizia viene applicata uniformemente a tutte le colonne testuali significative:</p>
+
+  <pre><code>TEXT_COLS = [
+    'NomeComuneValidato', 'NomeProvinciaValidato', 'NomeRegioneValidato',
+    'categoria', 'sottocategoria', 'destinatario', 'fine', 'utilizzo',
+    'provvedimento', 'tipologia_procedura'
+]
+
+for col in TEXT_COLS:
+    df[col] = (
+        df[col]
+        .astype(str).str.strip()
+        .replace({'nan': np.nan, '': np.nan, 'None': np.nan})
+    )</code></pre>
+
+  <p>L'operazione <code>str.strip()</code> elimina spazi e caratteri di controllo, mentre il <code>replace</code> con dizionario converte le tre forme di "vuoto testuale" (<code>"nan"</code>, <code>""</code>, <code>"None"</code>) in veri NaN di pandas, così le analisi di completezza successive riportano valori coerenti.</p>
+
+  <h3>5.7 Arricchimento geografico: coordinate comunali da Wikidata</h3>
+  <p>Il dataset ANBSC non include coordinate geografiche. Per abilitare la visualizzazione su mappa, è necessario associare a ogni bene una posizione spaziale. L'approccio più preciso sarebbe il geocoding dell'indirizzo tramite Nominatim o Google Geocoding API; questo è però impraticabile per due ragioni:</p>
+  <ul>
+    <li>Nominatim impone un rate limit di 1 richiesta/secondo: geocodificare 36.301 beni richiederebbe circa 10 ore;</li>
+    <li>Il 50,5% degli indirizzi non contiene numero civico (v. sezione 5.8), rendendo il geocoding inaffidabile per metà del dataset.</li>
+  </ul>
+
+  <p>La scelta adottata è recuperare le <strong>coordinate geografiche del comune</strong> (proprietà <code>wdt:P625</code> di Wikidata) tramite join sul codice ISTAT a 6 cifre (<code>CODISTAT</code>). Le coordinate sono già presenti in <code>dataset/other/wikidata_comuni.csv</code>, ottenuto dalla query SPARQL in <code>dataset/querySparql.txt</code> — la stessa query usata per il mapping Wikidata nella fase di interlinking LOD (sezione 10). Le colonne <code>lat</code> e <code>lon</code> sono aggiunte al dataset tramite join:</p>
+
+  <pre><code>wikidata = pd.read_csv('../dataset/other/wikidata_comuni.csv', dtype={'codistat': str})
+wikidata['codistat'] = wikidata['codistat'].str.zfill(6)
+
+df = df.merge(
+    wikidata[['codistat', 'lat', 'lon']],
+    left_on='CODISTAT', right_on='codistat', how='left'
+).drop(columns=['codistat'])
+
+# Risultato: 35.744 beni con coordinate su 36.301 (98,5%); 557 beni in comuni senza P625 su Wikidata</code></pre>
+
+  <p>Questo approccio è tracciabile, riproducibile e in linea con i principi del progetto: le coordinate provengono da una fonte LOD esterna (Wikidata) già usata per l'interlinking, senza dizionari statici. La granularità è a livello di comune, più precisa rispetto a un centroide provinciale. Per la localizzazione del singolo bene, la dashboard delega al link Google Maps (con avviso che l'indirizzo non è verificato, v. sezione 5.8).</p>
+
+  <h3>5.8 Qualità degli indirizzi: un caso concreto</h3>
+  <p>Durante l'esplorazione interattiva del dashboard, è emerso un esempio emblematico della bassa qualità dei dati geografici presenti nel dataset ANBSC. Il bene <strong>I-PA-64286-S</strong> riporta come indirizzo <code>VIA NINO BIXIO 38/A, PIANO T</code> nel comune di <strong>Misilmeri (PA)</strong>. Una verifica manuale su Google Maps e OpenStreetMap conferma che <strong>Via Nino Bixio non esiste a Misilmeri</strong>: si tratta verosimilmente di un errore di trascrizione commesso dall'ufficio giudiziario al momento dell'inserimento del dato.</p>
+
+  <div class="pb">
+    <div class="tag">🔴 Problema — Indirizzi non verificati nel dataset ANBSC</div>
+    <p>Su 15.443 beni con campo <code>indirizzo</code> compilato, il 50,5% (7.794) non contiene un numero civico — spesso perché si tratta di contrade, terreni agricoli o strade rurali (<code>C/DA BUONFORNELLO</code>, <code>LOC. TRESSANTI</code>, <code>VIA SASOLLA S.N.C.</code>). Del restante 49,5% con numero civico, una quota non quantificabile con certezza contiene indirizzi errati, obsoleti o inesistenti, inseriti manualmente dagli uffici giudiziari senza validazione automatica. Il bene I-PA-64286-S (Misilmeri, Via Nino Bixio 38/A) è un esempio verificato: la via non esiste nel comune dichiarato.</p>
+  </div>
+
+  <div class="sl">
+    <div class="tag">✅ Soluzione e scelta progettuale</div>
+    <p>Non disponendo di un servizio di geocodifica affidabile per l'intero dataset, non è stato possibile validare automaticamente gli indirizzi. La scelta progettuale adottata è stata:</p>
+    <ul>
+      <li>Mantenere gli indirizzi esattamente come presenti nella fonte ANBSC, senza modifiche che potrebbero introdurre ulteriori errori;</li>
+      <li>Esporre gli indirizzi nel dashboard con un <strong>avviso esplicito</strong> ("Indirizzi non verificati — dataset ANBSC") e un link a Google Maps etichettato come "non verificato";</li>
+      <li>Documentare il problema nella relazione come esempio concreto di <em>bassa qualità dei dati</em> nella fonte primaria.</li>
+    </ul>
+    <p>Una futura estensione del progetto potrebbe integrare un passaggio di <strong>geocodifica batch</strong> tramite API Nominatim (rate limit: 1 req/s) o Google Geocoding API, per validare e correggere gli indirizzi e aggiungere coordinate precise a livello di singolo bene — portando il dataset da ⭐⭐⭐⭐ a ⭐⭐⭐⭐⭐ nel modello 5 stelle anche per la componente geografica.</p>
+  </div>
+
+  <div class="note">
+    <strong>Nota metodologica:</strong> La scoperta di questo errore è avvenuta durante la fase di esplorazione interattiva del dashboard, cliccando sul bottone "Maps" per un bene del comune di Misilmeri. Questo dimostra come uno strumento di visualizzazione interattiva non sia solo uno strumento di presentazione, ma anche un <em>validatore implicito</em> della qualità dei dati: rendere i dati esplorabili permette di identificare anomalie che l'analisi statistica aggregata non rileverebbe.
+  </div>
+
+  <h3>5.9 Esportazione</h3>
+  <p>Al termine della pipeline, il dataset unificato e pulito viene esportato dalla funzione <code>esporta_csv_e_frictionless()</code> in <code>utils.py</code>, che produce due artefatti:</p>
+  <ul>
+    <li><code>dataset/processed/beni-confiscati.csv</code> — il dataset principale in formato CSV con encoding UTF-8 e separatore virgola. Il file finale conta 36.301 righe e 29 colonne, con dimensione su disco di circa 9,9 MB;</li>
+    <li><code>dataset/processed/datapackage.json</code> — i metadati strutturati secondo lo standard Frictionless Data, che descrivono lo schema colonna per colonna (nome, tipo, descrizione, vincoli). Questo file è la "carta d'identità" del dataset e consente a qualunque tool compatibile Frictionless di validare e caricare il CSV senza configurazione manuale.</li>
+  </ul>
+
+</section>
+
+<!-- ========== FRICTIONLESS ========== -->
+<section id="frictionless">
+  <h2>6. Standard Frictionless Data</h2>
+  <p>Per garantire la massima interoperabilità e descrivibilità del dataset, è stato generato un file <code>datapackage.json</code> conforme allo standard <a href="https://specs.frictionlessdata.io/data-package/" target="_blank">Frictionless Data</a>, mantenuto dall'Open Knowledge Foundation.</p>
+
+  <h3>6.1 Cos'è Frictionless Data</h3>
+  <p>Frictionless Data è uno standard aperto che specifica come descrivere dataset tabulari in modo machine-readable. Un <em>Data Package</em> è composto da un file JSON descrittore (<code>datapackage.json</code>) che contiene:</p>
+  <ul>
+    <li><strong>Metadati globali</strong>: titolo, descrizione, versione, autore, licenza, parole chiave;</li>
+    <li><strong>Lista di risorse</strong> (<em>resources</em>): ogni risorsa descrive un file di dati, con path, formato e schema;</li>
+    <li><strong>Schema dei campi</strong>: per ogni colonna, nome, tipo, descrizione, vincoli (obbligatorio, valori ammessi).</li>
+  </ul>
+
+  <h3>6.2 Metadati generali del datapackage</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Property</th><th>Value</th></tr>
+    <tr><td>name</td><td>beni-confiscati-mafia-italia</td></tr>
+    <tr><td>title</td><td>Beni Confiscati alla Criminalità Organizzata in Italia</td></tr>
+    <tr><td>description</td><td>Dataset unificato di immobili e aziende confiscati alla criminalità organizzata, pubblicato da ANBSC</td></tr>
+    <tr><td>version</td><td>1.0.0</td></tr>
+    <tr><td>keywords</td><td>mafia, beni confiscati, antimafia, immobili, aziende, italia, open data</td></tr>
+    <tr><td>licenses</td><td>CC-BY-4.0</td></tr>
+    <tr><td>sources</td><td>ANBSC — https://www.confiscatibene.it/dataset/openregio</td></tr>
+    <tr><td>created</td><td>2026-06-26</td></tr>
+  </table>
+  </div>
+
+  <h3>6.3 Schema dei campi principali</h3>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Campo</th><th>Tipo Frictionless</th><th>Constraints</th><th>Descrizione</th></tr>
+    <tr><td>tipo</td><td>string</td><td>enum: [immobile, azienda]</td><td>Tipologia del bene confiscato</td></tr>
+    <tr><td>stato</td><td>string</td><td>enum: [destinato, in_gestione]</td><td>Stato amministrativo del bene</td></tr>
+    <tr><td>s_bene</td><td>string</td><td>—</td><td>Identificatore univoco assegnato da ANBSC</td></tr>
+    <tr><td>categoria</td><td>string</td><td>required: true</td><td>Categoria tipologica del bene</td></tr>
+    <tr><td>CODISTAT</td><td>string</td><td>pattern: ^\d{6}$</td><td>Codice ISTAT comune a 6 cifre</td></tr>
+    <tr><td>CODISTATPROV</td><td>string</td><td>pattern: ^\d{3}$</td><td>Codice ISTAT provincia a 3 cifre</td></tr>
+    <tr><td>decreto_anno</td><td>integer</td><td>minimum: 1964</td><td>Anno del decreto di destinazione</td></tr>
+    <tr><td>quota_confiscata</td><td>number</td><td>minimum: 0, maximum: 100</td><td>Percentuale del bene confiscato</td></tr>
+    <tr><td>lat</td><td>number</td><td>minimum: 35, maximum: 48</td><td>Latitudine del comune da Wikidata P625 (aggiunta)</td></tr>
+    <tr><td>lon</td><td>number</td><td>minimum: 6, maximum: 19</td><td>Longitudine del comune da Wikidata P625 (aggiunta)</td></tr>
+  </table>
+  </div>
+</section>
+
+<!-- ========== PROBLEMI ========== -->
+<section id="problemi">
+  <h2>7. Problemi Incontrati e Soluzioni Adottate</h2>
+  <p>La realizzazione del progetto ha comportato alcune scelte tecniche non ovvie, documentate qui per motivare le decisioni progettuali adottate.</p>
+
+  <h3>Problema 1 — Conflitti di colonne durante pd.concat()</h3>
+  <div class="pb"><div class="tag">🔴 Problema</div>
+  I file "in gestione" contenevano <em>sia</em> <code>nome_regione</code> (colonna originale) <em>sia</em> <code>NomeRegioneValidato</code> (colonna già presente). Dopo il rename standard <code>nome_regione → NomeRegioneValidato</code>, il DataFrame aveva due colonne con lo stesso nome, rendendo l'indice non-unique e causando <code>pandas.errors.InvalidIndexError: Reindexing only valid with uniquely valued Index objects</code> durante <code>pd.concat()</code>.
+  </div>
+  <div class="sl"><div class="tag">✅ Soluzione</div>
+  Controllo condizionale nel ciclo di rinomina: se la colonna di destinazione esiste già, la sorgente viene eliminata (drop) anziché rinominata, evitando il duplicato:
+  <pre><code>for src, dst in ALIAS.items():
+    if src in df.columns:
+        if dst in df.columns:
+            df = df.drop(columns=[src])   # destinazione già esiste: rimuovi sorgente
+        else:
+            df = df.rename(columns={src: dst})  # rinomina normalmente</code></pre>
+  </div>
+
+  <h3>Problema 2 — Coordinate geografiche non presenti nel dataset</h3>
+  <div class="pb"><div class="tag">🔴 Problema</div>
+  Il dataset ANBSC non include coordinate geografiche. Per visualizzare i beni su mappa era necessario associare a ogni record una posizione spaziale. Il geocoding puntuale degli indirizzi, pur essendo l'approccio più preciso, richiederebbe ore di elaborazione per 36.301 beni e risulterebbe comunque inaffidabile per il 50,5% dei record privi di numero civico.
+  </div>
+  <div class="sl"><div class="tag">✅ Soluzione</div>
+  Le coordinate geografiche sono recuperate da <strong>Wikidata</strong> (proprietà P625) tramite join sul codice ISTAT comune (<code>CODISTAT</code>), utilizzando lo stesso file <code>wikidata_comuni.csv</code> già prodotto per la fase di interlinking LOD. Le colonne <code>lat</code> e <code>lon</code> vengono aggiunte al dataset con una singola operazione di merge, con copertura del 98,5% dei beni (35.744 su 36.301). Questo approccio è tracciabile, riproducibile e coerente con i principi del progetto.
+  </div>
+
+</section>
+
+<!-- ========== ANALISI ========== -->
+<section id="analisi">
+  <h2>8. Analisi del Dataset</h2>
+  <p>Il <a href="dashboard.html"><strong>Dashboard Interattivo →</strong></a> mostra tutte le visualizzazioni con filtri per regione e mappa drill-down. Qui di seguito i principali risultati analitici.</p>
+
+  <h3>8.1 Distribuzione geografica</h3>
+  <p>La distribuzione dei beni confiscati rispecchia fedelmente la geografia storica delle organizzazioni criminali italiane. La <strong>Sicilia</strong> concentra il 36,2% di tutti i beni (13.159), riflettendo la presenza capillare di Cosa Nostra sul territorio. Seguono <strong>Campania</strong> (15,0%, 5.443 beni — Camorra), <strong>Calabria</strong> (14,3%, 5.187 beni — 'Ndrangheta) e <strong>Puglia</strong> (7,6%, 2.747 beni — Sacra Corona Unita).</p>
+  <p>Significativa anche la presenza di <strong>Lombardia</strong> (8,9%, 3.241 beni) e <strong>Lazio</strong> (6,3%, 2.304 beni), che riflette la penetrazione della criminalità organizzata nell'economia del centro-nord. Il caso di Milano, con 1.588 beni confiscati, testimonia come la 'Ndrangheta abbia colonizzato il tessuto imprenditoriale lombardo attraverso riciclaggio di denaro e infiltrazioni nell'edilizia.</p>
+
+  <h3>8.2 Tipologia dei beni</h3>
+  <p>Il 89,1% dei beni confiscati è di tipo <strong>immobile</strong> (32.327), contro il 10,9% di <strong>aziende</strong> (3.974). Tra gli immobili, le categorie più frequenti sono le unità abitative (50,2%, 16.225 beni) e i terreni (35,9%, 11.602 beni). I terreni agricoli confiscati sono particolarmente concentrati in Sicilia e Calabria, dove la mafia storicamente controllava le terre attraverso il latifondismo.</p>
+  <p>Tra le aziende, dominano le Società a responsabilità limitata (56,7%, 2.255) — forma societaria preferita per la sua flessibilità — seguite da imprese individuali (21,0%, 836) e società in accomandita semplice (10,1%, 403).</p>
+
+  <h3>8.3 La distinzione "In Gestione" vs "Destinato"</h3>
+  <p>Una delle distinzioni fondamentali nel ciclo di vita di un bene confiscato è quella tra lo stato <strong>in gestione</strong> e lo stato <strong>destinato</strong>. Comprendere questa differenza è essenziale per interpretare correttamente i dati del dataset ANBSC.</p>
+
+  <div class="note">
+    <strong>In gestione</strong> — Il bene è stato sequestrato e confiscato definitivamente dal tribunale, ma <em>non ha ancora ricevuto un decreto di destinazione</em>. È sotto l'amministrazione giudiziaria dell'ANBSC, che lo gestisce in attesa che venga decisa la sua destinazione finale. Durante questa fase il bene può essere: lasciato inutilizzato, affittato temporaneamente per generare reddito, oppure gestito per mantenerne il valore. <strong>Non è ancora stato "restituito" alla collettività.</strong>
+  </div>
+
+  <div class="note">
+    <strong>Destinato</strong> — Il Tribunale o l'ANBSC ha emesso un <em>decreto di destinazione</em> formale, assegnando il bene a un soggetto specifico (ente pubblico, associazione, forze dell'ordine) per uno scopo dichiarato (sociale, istituzionale, produttivo). Da questo momento il bene ha un "proprietario" legittimo e uno scopo definito. <strong>È il punto di arrivo del percorso antimafia: il bene torna a servire la comunità.</strong>
+  </div>
+
+  <p>Il dataset ANBSC fotografa entrambe le fasi: il 56,4% dei beni (20.475) è ancora <strong>in gestione</strong>, il 43,6% (15.826) è stato <strong>destinato</strong>. È importante sottolineare che:</p>
+  <ul>
+    <li>I beni <em>in gestione</em> hanno solo informazioni geografiche e tipologiche — <strong>nessun indirizzo fisico</strong> è disponibile (0 su 20.475), probabilmente per tutelare l'integrità dei procedimenti ancora in corso;</li>
+    <li>I beni <em>destinati</em> hanno invece quasi sempre l'indirizzo compilato (15.443 su 15.826, pari al 97,6%), il nome del destinatario, l'anno e il numero del decreto — dati utili per il monitoraggio civico;</li>
+    <li>Il tempo medio tra la confisca definitiva e la destinazione può essere di <strong>anni o decenni</strong>, spiegando la grande quantità di beni ancora in gestione.</li>
+  </ul>
+  <p>Tra i destinatari, il <strong>Comune</strong> è il soggetto privilegiato (71,9% dei beni destinati, 11.381 beni): gli immobili vengono trasferiti agli enti locali per uso istituzionale (sedi comunali, biblioteche) o sociale (case famiglia, cooperative). Seguono i <strong>Carabinieri</strong> (4,8%), lo <strong>Stato</strong> tramite Ministeri (2,9%) e la <strong>Guardia di Finanza</strong> (2,8%).</p>
+
+  <h3>8.4 Trend temporale</h3>
+  <p>Il grafico del trend temporale mostra un'accelerazione significativa dei decreti di destinazione a partire dal <strong>2007</strong>, anno successivo all'entrata in vigore del D.Lgs. 159/2006 (Codice delle leggi antimafia). Il picco assoluto si registra nel <strong>2017</strong> con 2.419 beni destinati in un singolo anno, a testimonianza dell'efficienza crescente del sistema di gestione dei beni confiscati. La brusca caduta nel 2019 (solo 12 beni) è probabilmente dovuta a dati non ancora caricati nel dataset per quell'anno.</p>
+
+  <h3>8.5 Visualizzazioni prodotte</h3>
+  <ol>
+    <li><strong>Grafico a barre orizzontale per regione</strong>: distribuzione dei beni per regione con colori graduali (rosso intenso = più beni). Colori rosso scuro sopra la mediana, rosso chiaro sotto.</li>
+    <li><strong>Doppio grafico a torta</strong>: tipo (immobile/azienda) e stato (destinato/in_gestione) con percentuali.</li>
+    <li><strong>Timeline fill_between</strong>: trend dei beni destinati dal 1982 al 2019 con annotazioni per eventi legislativi chiave.</li>
+    <li><strong>Doppio grafico a barre per categoria</strong>: top 8 categorie di immobili e top 8 di aziende.</li>
+    <li><strong>Grafico a barre per destinatari</strong>: top 8 enti assegnatari dei beni destinati.</li>
+    <li><strong>Mappa Leaflet interattiva</strong>: cerchi per provincia con dimensione proporzionale al numero di beni; popup con statistiche complete e top comuni; zoom fino al livello comunale.</li>
+  </ol>
+</section>
+
+<!-- ========== ONTOLOGIA ========== -->
+<section id="ontologia">
+  <h2>9. Definizione dell'Ontologia</h2>
+  <p>L'ontologia è il nucleo semantico del progetto: definisce formalmente le classi di entità, le relazioni tra esse e le proprietà dei dati, garantendo interoperabilità con altri sistemi e dataset. È definita in formato <strong>Turtle (OWL 2)</strong> nel file <code>ontology/ontology.ttl</code>.</p>
+
+  <h3>9.1 Namespace e prefissi</h3>
+  <pre><code>@prefix rdf:    &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs:   &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix owl:    &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix xsd:    &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix schema: &lt;http://schema.org/&gt; .
+@prefix wd:     &lt;http://www.wikidata.org/entity/&gt; .
+@prefix wdt:    &lt;http://www.wikidata.org/prop/direct/&gt; .
+@prefix dct:    &lt;http://purl.org/dc/terms/&gt; .
+@prefix exOnt:  &lt;http://example.org/ontology/beniconfiscati/&gt; .
+@prefix exData: &lt;http://example.org/data/beniconfiscati/&gt; .</code></pre>
+
+  <p>L'uso congiunto di Schema.org (<code>schema:</code>) e Wikidata (<code>wd:/wdt:</code>) permette di mappare ogni classe e proprietà locale su concetti globali già noti, aumentando l'interoperabilità dell'ontologia.</p>
+
+  <h3>9.2 Gerarchia delle classi</h3>
+  <p>Classi principali:</p>
+  <p>
+    <span class="chip chip-cls">exOnt:BeneConfiscato</span>
+    <span class="chip chip-cls">exOnt:Immobile</span>
+    <span class="chip chip-cls">exOnt:Azienda</span>
+    <span class="chip chip-cls">exOnt:Comune</span>
+    <span class="chip chip-cls">exOnt:Provincia</span>
+    <span class="chip chip-cls">exOnt:Regione</span>
+    <span class="chip chip-cls">exOnt:Destinatario</span>
+    <span class="chip chip-cls">exOnt:ProceduraGiudiziaria</span>
+  </p>
+
+  <div class="table-wrap">
+  <table>
+    <tr><th>Classe</th><th>Superclasse</th><th>owl:equivalentClass</th><th>Descrizione</th></tr>
+    <tr><td><code>exOnt:BeneConfiscato</code></td><td>—</td><td><code>wd:Q97523085</code></td><td>Bene sottratto alla criminalità organizzata ai sensi del Codice Antimafia</td></tr>
+    <tr><td><code>exOnt:Immobile</code></td><td>BeneConfiscato</td><td><code>schema:Place</code></td><td>Bene immobile: abitazione, terreno, locale commerciale, ecc.</td></tr>
+    <tr><td><code>exOnt:Azienda</code></td><td>BeneConfiscato</td><td><code>schema:Organization</code></td><td>Impresa o società confiscata</td></tr>
+    <tr><td><code>exOnt:Comune</code></td><td>—</td><td><code>wd:Q747074</code>, <code>schema:City</code></td><td>Unità amministrativa comunale italiana</td></tr>
+    <tr><td><code>exOnt:Provincia</code></td><td>—</td><td><code>wd:Q15110</code></td><td>Provincia italiana</td></tr>
+    <tr><td><code>exOnt:Regione</code></td><td>—</td><td><code>wd:Q16110</code>, <code>schema:State</code></td><td>Regione amministrativa italiana</td></tr>
+    <tr><td><code>exOnt:Destinatario</code></td><td>—</td><td>—</td><td>Ente o soggetto che riceve il bene destinato</td></tr>
+    <tr><td><code>exOnt:ProceduraGiudiziaria</code></td><td>—</td><td>—</td><td>Procedimento legale da cui origina la confisca</td></tr>
+  </table>
+  </div>
+
+  <h3>9.3 Object Properties</h3>
+  <p>
+    <span class="chip chip-obj">exOnt:situatoIn</span>
+    <span class="chip chip-obj">exOnt:inProvincia</span>
+    <span class="chip chip-obj">exOnt:inRegione</span>
+    <span class="chip chip-obj">exOnt:assegnatoA</span>
+    <span class="chip chip-obj">exOnt:soggettoA</span>
+  </p>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Proprietà</th><th>Domain</th><th>Range</th><th>owl:equivalentProperty</th><th>Descrizione</th></tr>
+    <tr><td><code>situatoIn</code></td><td>BeneConfiscato</td><td>Comune</td><td><code>wdt:P131</code>, <code>schema:location</code></td><td>Collega un bene al comune dove si trova</td></tr>
+    <tr><td><code>inProvincia</code></td><td>Comune</td><td>Provincia</td><td><code>wdt:P131</code>, <code>schema:containedInPlace</code></td><td>Comune appartenente alla provincia</td></tr>
+    <tr><td><code>inRegione</code></td><td>Provincia</td><td>Regione</td><td><code>schema:containedInPlace</code></td><td>Provincia appartenente alla regione</td></tr>
+    <tr><td><code>assegnatoA</code></td><td>BeneConfiscato</td><td>Destinatario</td><td>—</td><td>Ente che ha ricevuto il bene con decreto</td></tr>
+    <tr><td><code>soggettoA</code></td><td>BeneConfiscato</td><td>ProceduraGiudiziaria</td><td>—</td><td>Procedura giudiziaria che ha generato la confisca</td></tr>
+  </table>
+  </div>
+
+  <h3>9.4 Datatype Properties</h3>
+  <p>
+    <span class="chip chip-dat">exOnt:idBene</span>
+    <span class="chip chip-dat">exOnt:stato</span>
+    <span class="chip chip-dat">exOnt:categoria</span>
+    <span class="chip chip-dat">exOnt:sottocategoria</span>
+    <span class="chip chip-dat">exOnt:fineUso</span>
+    <span class="chip chip-dat">exOnt:utilizzo</span>
+    <span class="chip chip-dat">exOnt:annoDecreto</span>
+    <span class="chip chip-dat">exOnt:quotaConfiscata</span>
+    <span class="chip chip-dat">exOnt:codiceISTAT</span>
+    <span class="chip chip-dat">exOnt:lat</span>
+    <span class="chip chip-dat">exOnt:lon</span>
+  </p>
+
+  <h3>9.5 Esempio di istanza nel grafo</h3>
+  <pre><code>exData:bene_i_pa_123_s
+    a exOnt:Immobile ;
+    exOnt:idBene          "I-PA-123-S"^^xsd:string ;
+    exOnt:stato           "destinato"^^xsd:string ;
+    exOnt:categoria       "Unità immobiliare per uso di abitazione"^^xsd:string ;
+    exOnt:sottocategoria  "Appartamento in condominio"^^xsd:string ;
+    exOnt:annoDecreto     2015^^xsd:integer ;
+    exOnt:assegnatoA      "Comune"^^xsd:string ;
+    exOnt:fineUso         "Fini sociali"^^xsd:string ;
+    exOnt:situatoIn       exData:comune_082053 .   # → Palermo</code></pre>
+
+  <h3>9.6 Statistiche del grafo RDF</h3>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="num">259.626</div><div class="lbl">Triple totali</div></div>
+    <div class="kpi"><div class="num">28.769</div><div class="lbl">Immobile</div></div>
+    <div class="kpi"><div class="num">3.761</div><div class="lbl">Azienda</div></div>
+    <div class="kpi"><div class="num">1.798</div><div class="lbl">Comune</div></div>
+    <div class="kpi"><div class="num">106</div><div class="lbl">Provincia</div></div>
+    <div class="kpi"><div class="num">20</div><div class="lbl">Regione</div></div>
+  </div>
+</section>
+
+<!-- ========== INTERLINKING ========== -->
+<section id="interlinking">
+  <h2>10. Interlinking con Wikidata</h2>
+  <p>L'interlinking è la fase che trasforma il dataset da un silo isolato a un nodo del <strong>Linked Open Data Cloud</strong>. Ogni istanza di <code>exOnt:Comune</code> nel grafo viene collegata al corrispondente item Wikidata tramite la proprietà <code>owl:sameAs</code>, che afferma formalmente che le due URI si riferiscono allo stesso ente del mondo reale.</p>
+
+  <h3>10.1 Strategia di interlinking</h3>
+  <p>La chiave di collegamento usata è il <strong>codice ISTAT del comune</strong> (6 cifre): questo codice è presente sia nel dataset ANBSC (colonna <code>CODISTAT</code>) sia su Wikidata come valore della proprietà <code>wdt:P635</code> (<em>ISTAT municipality code</em>). La corrispondenza biunivoca garantita dall'ISTAT rende questo approccio molto affidabile, senza necessità di matching fuzzy su stringhe.</p>
+
+  <h3>10.2 Query SPARQL su Wikidata</h3>
+  <p>La query seguente, eseguita su <a href="https://query.wikidata.org" target="_blank">query.wikidata.org</a>, recupera tutti i comuni italiani con il loro codice ISTAT:</p>
+  <div class="sparql"><span class="kw">SELECT</span> <span class="var">?wikidata_uri</span> <span class="var">?codistat</span>
+<span class="kw">WHERE</span> {
+  <span class="var">?wikidata_uri</span> <span class="uri">wdt:P31</span>  <span class="uri">wd:Q747074</span> .  <span class="cm"># istanza di: comune d'Italia (Q747074)</span>
+  <span class="var">?wikidata_uri</span> <span class="uri">wdt:P635</span> <span class="var">?codistat</span>   .  <span class="cm"># ha codice ISTAT (P635)</span>
+}
+<span class="kw">ORDER BY</span> <span class="var">?codistat</span></div>
+
+  <p>I nomi delle variabili SELECT (<code>?wikidata_uri</code>, <code>?codistat</code>) sono stati scelti deliberatamente in modo da essere già corretti come intestazioni del CSV scaricato da Wikidata, eliminando la necessità di rinominare le colonne manualmente.</p>
+
+  <h3>10.3 Equivalenze dichiarate nell'ontologia</h3>
+  <pre><code><span style="color:#a5d6ff">exOnt:Comune</span>       <span style="color:#ff7b72">owl:equivalentClass</span>    <span style="color:#a5d6ff">wd:Q747074</span> ;     <span style="color:#8b949e"># comune d'Italia</span>
+               <span style="color:#ff7b72">owl:equivalentClass</span>    <span style="color:#a5d6ff">schema:City</span> .
+
+<span style="color:#a5d6ff">exOnt:codiceISTAT</span>  <span style="color:#ff7b72">owl:equivalentProperty</span> <span style="color:#a5d6ff">wdt:P635</span> .  <span style="color:#8b949e"># ISTAT municipality code</span>
+<span style="color:#a5d6ff">exOnt:situatoIn</span>    <span style="color:#ff7b72">owl:equivalentProperty</span> <span style="color:#a5d6ff">wdt:P131</span> .  <span style="color:#8b949e"># located in administrative entity</span>
+<span style="color:#a5d6ff">exOnt:Immobile</span>     <span style="color:#ff7b72">owl:equivalentClass</span>    <span style="color:#a5d6ff">schema:Place</span> .
+<span style="color:#a5d6ff">exOnt:Azienda</span>      <span style="color:#ff7b72">owl:equivalentClass</span>    <span style="color:#a5d6ff">schema:Organization</span> .</code></pre>
+
+  <h3>10.4 Esempio di triple generate</h3>
+  <pre><code>exData:comune_082053
+    a                 exOnt:Comune ;
+    exOnt:nomeLabel   "PALERMO"^^xsd:string ;
+    exOnt:codiceISTAT "082053"^^xsd:string ;
+    exOnt:lat         38.1157^^xsd:decimal ;
+    exOnt:lon         13.3615^^xsd:decimal ;
+    exOnt:inProvincia exData:provincia_palermo ;
+    owl:sameAs        wd:Q2656 .     # ← URI Wikidata di Palermo</code></pre>
+
+  <h3>10.5 Risultati dell'interlinking</h3>
+  <div class="kpi-grid">
+    <div class="kpi"><div class="num">7.859</div><div class="lbl">Comuni Wikidata disponibili</div></div>
+    <div class="kpi"><div class="num">1.798</div><div class="lbl">Comuni nel nostro dataset</div></div>
+    <div class="kpi"><div class="num">1.766</div><div class="lbl">owl:sameAs generati</div></div>
+    <div class="kpi"><div class="num">32</div><div class="lbl">Comuni senza match</div></div>
+    <div class="kpi"><div class="num">98,2%</div><div class="lbl">Copertura</div></div>
+  </div>
+  <p>I 32 comuni senza match (1,8%) corrispondono a casi borderline: codici ISTAT aggiornati dopo la fusione di comuni, frazioni erroneamente riportate come comuni autonomi, o piccoli errori nei dati originali ANBSC. La copertura del 98,2% è considerata eccellente.</p>
+
+  <h3>10.6 Query SPARQL di interrogazione dell'ontologia</h3>
+  <p>Una volta prodotto il file <code>ontologia-beni-confiscati.ttl</code>, il grafo è interrogabile tramite qualsiasi endpoint SPARQL (es. caricando il TTL in Apache Jena o Fuseki). Le query seguenti mostrano alcune interrogazioni rappresentative sul dato prodotto.</p>
+
+  <p><strong>Query 1 — Tutti i beni immobili di Palermo con categoria e stato</strong></p>
+  <div class="sparql"><span class="kw">PREFIX</span> exOnt: &lt;http://example.org/ontology/beniconfiscati/&gt;
+<span class="kw">PREFIX</span> exData: &lt;http://example.org/data/beniconfiscati/&gt;
+
+<span class="kw">SELECT</span> <span class="var">?bene</span> <span class="var">?categoria</span> <span class="var">?stato</span>
+<span class="kw">WHERE</span> {
+  <span class="var">?bene</span> <span class="uri">a</span> <span class="uri">exOnt:Immobile</span> ;
+        <span class="uri">exOnt:situatoIn</span> <span class="uri">exData:comune_082053</span> ;  <span class="cm"># 082053 = ISTAT Palermo</span>
+        <span class="uri">exOnt:categoria</span> <span class="var">?categoria</span> ;
+        <span class="uri">exOnt:stato</span>     <span class="var">?stato</span> .
+}
+<span class="kw">ORDER BY</span> <span class="var">?categoria</span></div>
+
+  <p><strong>Query 2 — Conteggio dei beni per regione, in ordine decrescente</strong></p>
+  <div class="sparql"><span class="kw">PREFIX</span> exOnt: &lt;http://example.org/ontology/beniconfiscati/&gt;
+
+<span class="kw">SELECT</span> <span class="var">?regione</span> (<span class="kw">COUNT</span>(<span class="var">?bene</span>) <span class="kw">AS</span> <span class="var">?totale</span>)
+<span class="kw">WHERE</span> {
+  <span class="var">?bene</span>   <span class="uri">a</span>                  <span class="uri">exOnt:BeneConfiscato</span> ;
+          <span class="uri">exOnt:situatoIn</span>    <span class="var">?comune</span> .
+  <span class="var">?comune</span> <span class="uri">exOnt:inProvincia</span> <span class="var">?prov</span> .
+  <span class="var">?prov</span>   <span class="uri">exOnt:inRegione</span>   <span class="var">?regione</span> .
+}
+<span class="kw">GROUP BY</span> <span class="var">?regione</span>
+<span class="kw">ORDER BY</span> <span class="kw">DESC</span>(<span class="var">?totale</span>)</div>
+
+  <p><strong>Query 3 — Comuni con beni confiscati collegati a Wikidata (navigazione cross-grafo)</strong></p>
+  <div class="sparql"><span class="kw">PREFIX</span> exOnt: &lt;http://example.org/ontology/beniconfiscati/&gt;
+<span class="kw">PREFIX</span> owl:   &lt;http://www.w3.org/2002/07/owl#&gt;
+
+<span class="kw">SELECT</span> <span class="var">?nomeComune</span> <span class="var">?wikidataURI</span> (<span class="kw">COUNT</span>(<span class="var">?bene</span>) <span class="kw">AS</span> <span class="var">?nBeni</span>)
+<span class="kw">WHERE</span> {
+  <span class="var">?bene</span>   <span class="uri">exOnt:situatoIn</span>   <span class="var">?comune</span> .
+  <span class="var">?comune</span> <span class="uri">exOnt:nomeLabel</span>  <span class="var">?nomeComune</span> ;
+          <span class="uri">owl:sameAs</span>        <span class="var">?wikidataURI</span> .
+  <span class="kw">FILTER</span>(<span class="kw">STRSTARTS</span>(<span class="kw">STR</span>(<span class="var">?wikidataURI</span>), <span class="str">"http://www.wikidata.org"</span>))
+}
+<span class="kw">GROUP BY</span> <span class="var">?nomeComune</span> <span class="var">?wikidataURI</span>
+<span class="kw">ORDER BY</span> <span class="kw">DESC</span>(<span class="var">?nBeni</span>)
+<span class="kw">LIMIT</span> 10</div>
+  <p>Quest'ultima query è particolarmente significativa perché attraversa il collegamento <code>owl:sameAs</code>: permette di navigare dal dato locale (il bene confiscato) verso il grafo globale di Wikidata, dimostrando in concreto il valore dell'interlinking.</p>
+
+</section>
+
+<!-- ========== CONCLUSIONI ========== -->
+<section id="conclusioni">
+  <h2>11. Conclusioni</h2>
+  <p>Il progetto ha raggiunto tutti gli obiettivi prefissati, producendo un ecosistema completo di Open Data attorno al dataset dei beni confiscati alla mafia in Italia.</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="year">Fase 1 — Data Integration</div>
+      <p>4 CSV eterogenei unificati in un dataset da 36.301 beni e 29 colonne, con gestione automatica di conflitti di naming, normalizzazione dei codici ISTAT, aggiunta di coordinate geografiche comunali (da Wikidata P625) e esportazione Frictionless Data conforme.</p>
+    </div>
+    <div class="tl-item">
+      <div class="year">Fase 2 — Analisi Esplorativa</div>
+      <p>6 visualizzazioni statiche (PNG) prodotte con matplotlib e un dashboard HTML interattivo con Plotly + Leaflet. Principali insight: concentrazione geografica nelle regioni a tradizionale presenza mafiosa (65% dei beni in Sicilia, Campania, Calabria), crescita esponenziale dopo il 2007, prevalenza degli immobili abitativi.</p>
+    </div>
+    <div class="tl-item">
+      <div class="year">Fase 3 — Knowledge Engineering</div>
+      <p>Ontologia OWL 2 con 8 classi, 5 object properties, 10 datatype properties, equivalenze con schema.org e Wikidata. Grafo popolato con 259.626 triple tramite rdflib in Python, serializzato in formato Turtle.</p>
+    </div>
+    <div class="tl-item">
+      <div class="year">Fase 4 — Linked Open Data</div>
+      <p>1.766 comuni collegati a Wikidata via <code>owl:sameAs</code> (copertura 98,2%). Equivalenze di classe e proprietà dichiarate per <code>wd:Q747074</code>, <code>wdt:P635</code>, <code>wdt:P131</code>, <code>schema:Place</code>, <code>schema:Organization</code>. Il grafo risultante è interrogabile via SPARQL federation.</p>
+    </div>
+  </div>
+
+  <p>Il dataset risultante rappresenta una risorsa riutilizzabile per ricercatori, giornalisti investigativi, enti pubblici e associazioni del terzo settore che operano nel campo del riutilizzo sociale dei beni confiscati. Grazie all'interlinking Wikidata, è possibile effettuare query federate SPARQL che combinano i beni confiscati con qualsiasi altra informazione disponibile nel Web of Data — popolazione dei comuni, dati economici, statistiche criminali.</p>
+</section>
+
+<!-- ========== LINK ========== -->
+<section id="link">
+  <h2>12. Link Utili</h2>
+  <div class="link-grid">
+    <a class="link-card" href="https://www.confiscatibene.it/dataset/openregio" target="_blank">
+      <div class="lt">📦 Dataset ANBSC su confiscatibene.it</div>
+      <div class="ld">Fonte dei 4 CSV — CC BY 4.0</div>
+    </a>
+    <a class="link-card" href="https://www.anbsc.it" target="_blank">
+      <div class="lt">🏛️ ANBSC</div>
+      <div class="ld">Agenzia Nazionale Beni Sequestrati e Confiscati</div>
+    </a>
+    <a class="link-card" href="https://query.wikidata.org" target="_blank">
+      <div class="lt">🔍 Wikidata Query Service</div>
+      <div class="ld">SPARQL endpoint per l'interlinking</div>
+    </a>
+    <a class="link-card" href="https://www.wikidata.org/wiki/Property:P635" target="_blank">
+      <div class="lt">🔗 Wikidata P635</div>
+      <div class="ld">Proprietà "codice ISTAT del comune"</div>
+    </a>
+    <a class="link-card" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">
+      <div class="lt">⚖️ CC BY 4.0</div>
+      <div class="ld">Licenza del dataset sorgente</div>
+    </a>
+    <a class="link-card" href="https://specs.frictionlessdata.io/data-package/" target="_blank">
+      <div class="lt">📋 Frictionless Data Spec</div>
+      <div class="ld">Standard usato per il datapackage.json</div>
+    </a>
+    <a class="link-card" href="https://www.w3.org/TR/owl2-overview/" target="_blank">
+      <div class="lt">🌐 OWL 2</div>
+      <div class="ld">Web Ontology Language — W3C</div>
+    </a>
+
+    <a class="link-card" href="dashboard.html">
+      <div class="lt">📊 Dashboard Interattivo</div>
+      <div class="ld">Mappa Leaflet, grafici Plotly, tabella dati</div>
+    </a>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>Progetto Open Data · <strong>Mirko Speciale</strong> · UNIPA — Dipartimento di Matematica ed Informatica · A.A. 2025/2026</p>
+  <p style="margin-top:.5rem">Dati: <a href="https://www.confiscatibene.it/dataset/openregio">confiscatibene.it</a> (ANBSC) · Licenza: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · Ontologia: OWL 2 / Turtle · Interlinking: Wikidata CC0</p>
+</footer>
+
+</body>
+</html>

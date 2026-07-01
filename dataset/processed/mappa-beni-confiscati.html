@@ -1,0 +1,3566 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_786873d6d4f2c114adf65102d13b2c18 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_786873d6d4f2c114adf65102d13b2c18" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_786873d6d4f2c114adf65102d13b2c18 = L.map(
+                "map_786873d6d4f2c114adf65102d13b2c18",
+                {
+                    center: [41.87, 12.56],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8a006588b9e2028b3efb5175a6ce50b3 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8a006588b9e2028b3efb5175a6ce50b3.addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+            var circle_marker_f667b0bfc07679a7fbdae017def61504 = L.circleMarker(
+                [37.505, 15.087],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.866774979691307, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_8c94d43ded124f34a067e149685e5a2d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_11a01d4ce8fc0b129ef00ed5e50e0a52 = $(`<div id="html_11a01d4ce8fc0b129ef00ed5e50e0a52" style="width: 100.0%; height: 100.0%;"><b>Agrigento</b><br>Beni: 952</div>`)[0];
+                popup_8c94d43ded124f34a067e149685e5a2d.setContent(html_11a01d4ce8fc0b129ef00ed5e50e0a52);
+            
+        
+
+        circle_marker_f667b0bfc07679a7fbdae017def61504.bindPopup(popup_8c94d43ded124f34a067e149685e5a2d)
+        ;
+
+        
+    
+    
+            circle_marker_f667b0bfc07679a7fbdae017def61504.bindTooltip(
+                `<div>
+                     Agrigento: 952 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a297ad4aa23bb5d3943ff4edc7294251 = L.circleMarker(
+                [44.9109, 8.6147],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.345247766043867, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_1a5a6ea6c4e282e7ca3debf3524345ea = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c37050c6918acf34499341f78e40c517 = $(`<div id="html_c37050c6918acf34499341f78e40c517" style="width: 100.0%; height: 100.0%;"><b>Alessandria</b><br>Beni: 85</div>`)[0];
+                popup_1a5a6ea6c4e282e7ca3debf3524345ea.setContent(html_c37050c6918acf34499341f78e40c517);
+            
+        
+
+        circle_marker_a297ad4aa23bb5d3943ff4edc7294251.bindPopup(popup_1a5a6ea6c4e282e7ca3debf3524345ea)
+        ;
+
+        
+    
+    
+            circle_marker_a297ad4aa23bb5d3943ff4edc7294251.bindTooltip(
+                `<div>
+                     Alessandria: 85 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_34fda893cad069c894bd18a3b5b13446 = L.circleMarker(
+                [44.8159, 11.6198],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.012185215272137, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_cf427aad95c5cb13dac1b3bf74f01462 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_87bd254b8d0092bb95e980efee6291ac = $(`<div id="html_87bd254b8d0092bb95e980efee6291ac" style="width: 100.0%; height: 100.0%;"><b>Ancona</b><br>Beni: 3</div>`)[0];
+                popup_cf427aad95c5cb13dac1b3bf74f01462.setContent(html_87bd254b8d0092bb95e980efee6291ac);
+            
+        
+
+        circle_marker_34fda893cad069c894bd18a3b5b13446.bindPopup(popup_cf427aad95c5cb13dac1b3bf74f01462)
+        ;
+
+        
+    
+    
+            circle_marker_34fda893cad069c894bd18a3b5b13446.bindTooltip(
+                `<div>
+                     Ancona: 3 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4c81b601ad0baa68c6e4b517181a00b2 = L.circleMarker(
+                [43.7163, 10.9536],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.284321689683185, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_b527d7c83c7bfe674b5f72b0885a96bc = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_113b5d726dfd3cdc928ea75c0b359fb2 = $(`<div id="html_113b5d726dfd3cdc928ea75c0b359fb2" style="width: 100.0%; height: 100.0%;"><b>Arezzo</b><br>Beni: 70</div>`)[0];
+                popup_b527d7c83c7bfe674b5f72b0885a96bc.setContent(html_113b5d726dfd3cdc928ea75c0b359fb2);
+            
+        
+
+        circle_marker_4c81b601ad0baa68c6e4b517181a00b2.bindPopup(popup_b527d7c83c7bfe674b5f72b0885a96bc)
+        ;
+
+        
+    
+    
+            circle_marker_4c81b601ad0baa68c6e4b517181a00b2.bindTooltip(
+                `<div>
+                     Arezzo: 70 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0a5394c4f8dd4e45e6a6fb91ab3ebde4 = L.circleMarker(
+                [44.2226, 12.0408],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.052802599512591, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_fed735b8361c7bd941894da75f432b2c = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4d2f9c65e53ab746f329f68ed99c5417 = $(`<div id="html_4d2f9c65e53ab746f329f68ed99c5417" style="width: 100.0%; height: 100.0%;"><b>Ascoli Piceno</b><br>Beni: 13</div>`)[0];
+                popup_fed735b8361c7bd941894da75f432b2c.setContent(html_4d2f9c65e53ab746f329f68ed99c5417);
+            
+        
+
+        circle_marker_0a5394c4f8dd4e45e6a6fb91ab3ebde4.bindPopup(popup_fed735b8361c7bd941894da75f432b2c)
+        ;
+
+        
+    
+    
+            circle_marker_0a5394c4f8dd4e45e6a6fb91ab3ebde4.bindTooltip(
+                `<div>
+                     Ascoli Piceno: 13 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6c5d0af8f025fcf2ba3a3b35913bd563 = L.circleMarker(
+                [44.8998, 8.2067],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.129975629569456, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_15ac5fcd2d79731251fbf766589001ac = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d5b481557f3d496bc30c58beca976df0 = $(`<div id="html_d5b481557f3d496bc30c58beca976df0" style="width: 100.0%; height: 100.0%;"><b>Asti</b><br>Beni: 32</div>`)[0];
+                popup_15ac5fcd2d79731251fbf766589001ac.setContent(html_d5b481557f3d496bc30c58beca976df0);
+            
+        
+
+        circle_marker_6c5d0af8f025fcf2ba3a3b35913bd563.bindPopup(popup_15ac5fcd2d79731251fbf766589001ac)
+        ;
+
+        
+    
+    
+            circle_marker_6c5d0af8f025fcf2ba3a3b35913bd563.bindTooltip(
+                `<div>
+                     Asti: 32 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2d1719f8bcf0a8b5157d5466729a5f85 = L.circleMarker(
+                [40.65, 14.7914],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5199025182778225, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_631af260f59482f147cf9b92e4dd2e70 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_aee8a7212d0fab0bbc7d3e3b5f2187e8 = $(`<div id="html_aee8a7212d0fab0bbc7d3e3b5f2187e8" style="width: 100.0%; height: 100.0%;"><b>Avellino</b><br>Beni: 128</div>`)[0];
+                popup_631af260f59482f147cf9b92e4dd2e70.setContent(html_aee8a7212d0fab0bbc7d3e3b5f2187e8);
+            
+        
+
+        circle_marker_2d1719f8bcf0a8b5157d5466729a5f85.bindPopup(popup_631af260f59482f147cf9b92e4dd2e70)
+        ;
+
+        
+    
+    
+            circle_marker_2d1719f8bcf0a8b5157d5466729a5f85.bindTooltip(
+                `<div>
+                     Avellino: 128 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_08af54aeba67d816928b1188146a3124 = L.circleMarker(
+                [42.4608, 14.2152],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.188464662875711, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_368a7677edc72b015aa26041a99b926d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_817bc2352b9ef82cc461d5779ddb795f = $(`<div id="html_817bc2352b9ef82cc461d5779ddb795f" style="width: 100.0%; height: 100.0%;"><b>Bari</b><br>Beni: 785</div>`)[0];
+                popup_368a7677edc72b015aa26041a99b926d.setContent(html_817bc2352b9ef82cc461d5779ddb795f);
+            
+        
+
+        circle_marker_08af54aeba67d816928b1188146a3124.bindPopup(popup_368a7677edc72b015aa26041a99b926d)
+        ;
+
+        
+    
+    
+            circle_marker_08af54aeba67d816928b1188146a3124.bindTooltip(
+                `<div>
+                     Bari: 785 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4b234f9f785c4f937052d662612bd9fc = L.circleMarker(
+                [44.6477, 10.925],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.942323314378554, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_8de9b95fa6c83783b234a2b8e19ae2b6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a0e6743815a02b1bd42999431735eec0 = $(`<div id="html_a0e6743815a02b1bd42999431735eec0" style="width: 100.0%; height: 100.0%;"><b>Barletta-Andria-Trani</b><br>Beni: 232</div>`)[0];
+                popup_8de9b95fa6c83783b234a2b8e19ae2b6.setContent(html_a0e6743815a02b1bd42999431735eec0);
+            
+        
+
+        circle_marker_4b234f9f785c4f937052d662612bd9fc.bindPopup(popup_8de9b95fa6c83783b234a2b8e19ae2b6)
+        ;
+
+        
+    
+    
+            circle_marker_4b234f9f785c4f937052d662612bd9fc.bindTooltip(
+                `<div>
+                     Barletta-Andria-Trani: 232 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c35ad401395bfcf2914c906a385e613b = L.circleMarker(
+                [46.1699, 9.8718],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.048740861088546, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_0f81c7013af26291d81fc6c63941e0e7 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_613ab7aa0870a7ba610dddbf7a5aa0da = $(`<div id="html_613ab7aa0870a7ba610dddbf7a5aa0da" style="width: 100.0%; height: 100.0%;"><b>Belluno</b><br>Beni: 12</div>`)[0];
+                popup_0f81c7013af26291d81fc6c63941e0e7.setContent(html_613ab7aa0870a7ba610dddbf7a5aa0da);
+            
+        
+
+        circle_marker_c35ad401395bfcf2914c906a385e613b.bindPopup(popup_0f81c7013af26291d81fc6c63941e0e7)
+        ;
+
+        
+    
+    
+            circle_marker_c35ad401395bfcf2914c906a385e613b.bindTooltip(
+                `<div>
+                     Belluno: 12 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bd23184f13196b62c8b103da235bb1ad = L.circleMarker(
+                [40.8518, 14.2681],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.3411860276198215, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_0c08c1d65a12d3292bd4ec5f46d62715 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6567f9c61ce76efd805cb6e08592e2a2 = $(`<div id="html_6567f9c61ce76efd805cb6e08592e2a2" style="width: 100.0%; height: 100.0%;"><b>Benevento</b><br>Beni: 84</div>`)[0];
+                popup_0c08c1d65a12d3292bd4ec5f46d62715.setContent(html_6567f9c61ce76efd805cb6e08592e2a2);
+            
+        
+
+        circle_marker_bd23184f13196b62c8b103da235bb1ad.bindPopup(popup_0c08c1d65a12d3292bd4ec5f46d62715)
+        ;
+
+        
+    
+    
+            circle_marker_bd23184f13196b62c8b103da235bb1ad.bindTooltip(
+                `<div>
+                     Benevento: 84 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7f0e5baa013a7933d0fba9da37297ac7 = L.circleMarker(
+                [45.7009, 9.7718],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.532087733549959, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_bfff6bcbb7d406c16f7d8585a119fbbf = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e5d9d36e4c794313eeab0cc4d6f9e3f1 = $(`<div id="html_e5d9d36e4c794313eeab0cc4d6f9e3f1" style="width: 100.0%; height: 100.0%;"><b>Bergamo</b><br>Beni: 131</div>`)[0];
+                popup_bfff6bcbb7d406c16f7d8585a119fbbf.setContent(html_e5d9d36e4c794313eeab0cc4d6f9e3f1);
+            
+        
+
+        circle_marker_7f0e5baa013a7933d0fba9da37297ac7.bindPopup(popup_bfff6bcbb7d406c16f7d8585a119fbbf)
+        ;
+
+        
+    
+    
+            circle_marker_7f0e5baa013a7933d0fba9da37297ac7.bindTooltip(
+                `<div>
+                     Bergamo: 131 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_319d5ce11dc647a3e36df98817675c2b = L.circleMarker(
+                [43.3179, 13.4527],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.430544272948822, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_b8efb795eb7ae53dc5d98852a16e26ed = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d8d276663f35085c3b8b8f20c980a4bb = $(`<div id="html_d8d276663f35085c3b8b8f20c980a4bb" style="width: 100.0%; height: 100.0%;"><b>Biella</b><br>Beni: 106</div>`)[0];
+                popup_b8efb795eb7ae53dc5d98852a16e26ed.setContent(html_d8d276663f35085c3b8b8f20c980a4bb);
+            
+        
+
+        circle_marker_319d5ce11dc647a3e36df98817675c2b.bindPopup(popup_b8efb795eb7ae53dc5d98852a16e26ed)
+        ;
+
+        
+    
+    
+            circle_marker_319d5ce11dc647a3e36df98817675c2b.bindTooltip(
+                `<div>
+                     Biella: 106 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7eb272e32c71f9ca4170bb69c971eccb = L.circleMarker(
+                [46.3541, 13.5006],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.357432981316003, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_16fab1916b594afaa8cc1b25c718bb48 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c0e2b0d93cf8ab346915c779113da78c = $(`<div id="html_c0e2b0d93cf8ab346915c779113da78c" style="width: 100.0%; height: 100.0%;"><b>Bologna</b><br>Beni: 88</div>`)[0];
+                popup_16fab1916b594afaa8cc1b25c718bb48.setContent(html_c0e2b0d93cf8ab346915c779113da78c);
+            
+        
+
+        circle_marker_7eb272e32c71f9ca4170bb69c971eccb.bindPopup(popup_16fab1916b594afaa8cc1b25c718bb48)
+        ;
+
+        
+    
+    
+            circle_marker_7eb272e32c71f9ca4170bb69c971eccb.bindTooltip(
+                `<div>
+                     Bologna: 88 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_00a43ce7a262e14f435208cac86f6506 = L.circleMarker(
+                [45.5389, 10.2206],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.076360682372055, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_dfa8003248aa376ae91a39700d848c63 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d5e434ccfa8e23b1c28b08f4fdbdfcc1 = $(`<div id="html_d5e434ccfa8e23b1c28b08f4fdbdfcc1" style="width: 100.0%; height: 100.0%;"><b>Brescia</b><br>Beni: 265</div>`)[0];
+                popup_dfa8003248aa376ae91a39700d848c63.setContent(html_d5e434ccfa8e23b1c28b08f4fdbdfcc1);
+            
+        
+
+        circle_marker_00a43ce7a262e14f435208cac86f6506.bindPopup(popup_dfa8003248aa376ae91a39700d848c63)
+        ;
+
+        
+    
+    
+            circle_marker_00a43ce7a262e14f435208cac86f6506.bindTooltip(
+                `<div>
+                     Brescia: 265 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6b45bb18e864cfca6941525a1d2dc5ac = L.circleMarker(
+                [41.1171, 16.8719],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.384240454914703, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_76571636f30f49379886e2f80ffcf39e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_aa2452150872ee91b5996e90b05fef71 = $(`<div id="html_aa2452150872ee91b5996e90b05fef71" style="width: 100.0%; height: 100.0%;"><b>Brindisi</b><br>Beni: 587</div>`)[0];
+                popup_76571636f30f49379886e2f80ffcf39e.setContent(html_aa2452150872ee91b5996e90b05fef71);
+            
+        
+
+        circle_marker_6b45bb18e864cfca6941525a1d2dc5ac.bindPopup(popup_76571636f30f49379886e2f80ffcf39e)
+        ;
+
+        
+    
+    
+            circle_marker_6b45bb18e864cfca6941525a1d2dc5ac.bindTooltip(
+                `<div>
+                     Brindisi: 587 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_72ccd854f8b31b3badbb32b6819e8831 = L.circleMarker(
+                [40.7259, 8.5556],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5767668562144594, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_4d35c3477de113bd7dc845e95b1d5539 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d215cd1a2d1984d964ed9fabe1b17cf7 = $(`<div id="html_d215cd1a2d1984d964ed9fabe1b17cf7" style="width: 100.0%; height: 100.0%;"><b>Cagliari</b><br>Beni: 142</div>`)[0];
+                popup_4d35c3477de113bd7dc845e95b1d5539.setContent(html_d215cd1a2d1984d964ed9fabe1b17cf7);
+            
+        
+
+        circle_marker_72ccd854f8b31b3badbb32b6819e8831.bindPopup(popup_4d35c3477de113bd7dc845e95b1d5539)
+        ;
+
+        
+    
+    
+            circle_marker_72ccd854f8b31b3badbb32b6819e8831.bindTooltip(
+                `<div>
+                     Cagliari: 142 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_05b036bf56f09eae741316260c06e8cd = L.circleMarker(
+                [38.1793, 15.5544],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.715678310316815, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_c49f1ae70118a99374375a551a1337c4 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f0e07ad7e57f2d0629c7b9295b32cc31 = $(`<div id="html_f0e07ad7e57f2d0629c7b9295b32cc31" style="width: 100.0%; height: 100.0%;"><b>Caltanissetta</b><br>Beni: 1,161</div>`)[0];
+                popup_c49f1ae70118a99374375a551a1337c4.setContent(html_f0e07ad7e57f2d0629c7b9295b32cc31);
+            
+        
+
+        circle_marker_05b036bf56f09eae741316260c06e8cd.bindPopup(popup_c49f1ae70118a99374375a551a1337c4)
+        ;
+
+        
+    
+    
+            circle_marker_05b036bf56f09eae741316260c06e8cd.bindTooltip(
+                `<div>
+                     Caltanissetta: 1,161 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_133944a2f3d10443115d5a81f182803c = L.circleMarker(
+                [42.351, 13.3995],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.016246953696182, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_af291f2f98ed98b8162669ffd3734d6b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d2348b71e8714d9cfe225ffa90fb7097 = $(`<div id="html_d2348b71e8714d9cfe225ffa90fb7097" style="width: 100.0%; height: 100.0%;"><b>Campobasso</b><br>Beni: 4</div>`)[0];
+                popup_af291f2f98ed98b8162669ffd3734d6b.setContent(html_d2348b71e8714d9cfe225ffa90fb7097);
+            
+        
+
+        circle_marker_133944a2f3d10443115d5a81f182803c.bindPopup(popup_af291f2f98ed98b8162669ffd3734d6b)
+        ;
+
+        
+    
+    
+            circle_marker_133944a2f3d10443115d5a81f182803c.bindTooltip(
+                `<div>
+                     Campobasso: 4 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f81042d2c6f446debeb54540fe76f1c0 = L.circleMarker(
+                [41.0727, 14.3328],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.726238830219334, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_716c10e6d5b7f44d02357d65c64b736b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_0cd91b6332e57cbbadbf106fb3b6359a = $(`<div id="html_0cd91b6332e57cbbadbf106fb3b6359a" style="width: 100.0%; height: 100.0%;"><b>Caserta</b><br>Beni: 1,656</div>`)[0];
+                popup_716c10e6d5b7f44d02357d65c64b736b.setContent(html_0cd91b6332e57cbbadbf106fb3b6359a);
+            
+        
+
+        circle_marker_f81042d2c6f446debeb54540fe76f1c0.bindPopup(popup_716c10e6d5b7f44d02357d65c64b736b)
+        ;
+
+        
+    
+    
+            circle_marker_f81042d2c6f446debeb54540fe76f1c0.bindTooltip(
+                `<div>
+                     Caserta: 1,656 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fed48a945b3aa72f36359a86a62183d6 = L.circleMarker(
+                [37.0755, 15.2939],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.015434606011373, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_ce2cd7bf73ecaba83b59e573270655e8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d009ac714a70726d6ae4458ba3d905b7 = $(`<div id="html_d009ac714a70726d6ae4458ba3d905b7" style="width: 100.0%; height: 100.0%;"><b>Catania</b><br>Beni: 1,481</div>`)[0];
+                popup_ce2cd7bf73ecaba83b59e573270655e8.setContent(html_d009ac714a70726d6ae4458ba3d905b7);
+            
+        
+
+        circle_marker_fed48a945b3aa72f36359a86a62183d6.bindPopup(popup_ce2cd7bf73ecaba83b59e573270655e8)
+        ;
+
+        
+    
+    
+            circle_marker_fed48a945b3aa72f36359a86a62183d6.bindTooltip(
+                `<div>
+                     Catania: 1,481 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a48c2b28ec440bbf79422914c16dbbdb = L.circleMarker(
+                [41.2311, 16.2936],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.303005686433794, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_9a56d8dd77942f862f1e80f068948aa7 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b0945c4194ecd058826ffed7f096f642 = $(`<div id="html_b0945c4194ecd058826ffed7f096f642" style="width: 100.0%; height: 100.0%;"><b>Catanzaro</b><br>Beni: 567</div>`)[0];
+                popup_9a56d8dd77942f862f1e80f068948aa7.setContent(html_b0945c4194ecd058826ffed7f096f642);
+            
+        
+
+        circle_marker_a48c2b28ec440bbf79422914c16dbbdb.bindPopup(popup_9a56d8dd77942f862f1e80f068948aa7)
+        ;
+
+        
+    
+    
+            circle_marker_a48c2b28ec440bbf79422914c16dbbdb.bindTooltip(
+                `<div>
+                     Catanzaro: 567 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6a2202349a04d283b2219eadbfeafbee = L.circleMarker(
+                [42.351, 13.3995],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.467099918765231, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_c22deadba697db6ef22da063c9a32268 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3763fbfc21fc5c287524cb5428b17386 = $(`<div id="html_3763fbfc21fc5c287524cb5428b17386" style="width: 100.0%; height: 100.0%;"><b>Chieti</b><br>Beni: 115</div>`)[0];
+                popup_c22deadba697db6ef22da063c9a32268.setContent(html_3763fbfc21fc5c287524cb5428b17386);
+            
+        
+
+        circle_marker_6a2202349a04d283b2219eadbfeafbee.bindPopup(popup_c22deadba697db6ef22da063c9a32268)
+        ;
+
+        
+    
+    
+            circle_marker_6a2202349a04d283b2219eadbfeafbee.bindTooltip(
+                `<div>
+                     Chieti: 115 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5e1a48f57c1dd0a87a091d8d7f8ec743 = L.circleMarker(
+                [45.8206, 8.8257],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.49553208773355, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_8534606ed879bdf983887e17b0398d24 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_bb024f300665951415cb17137af48f69 = $(`<div id="html_bb024f300665951415cb17137af48f69" style="width: 100.0%; height: 100.0%;"><b>Como</b><br>Beni: 122</div>`)[0];
+                popup_8534606ed879bdf983887e17b0398d24.setContent(html_bb024f300665951415cb17137af48f69);
+            
+        
+
+        circle_marker_5e1a48f57c1dd0a87a091d8d7f8ec743.bindPopup(popup_8534606ed879bdf983887e17b0398d24)
+        ;
+
+        
+    
+    
+            circle_marker_5e1a48f57c1dd0a87a091d8d7f8ec743.bindTooltip(
+                `<div>
+                     Como: 122 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_16d00e61a498201480a2e805f70c9213 = L.circleMarker(
+                [40.6337, 17.9447],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.23395613322502, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_08a2926ca0affb9d1c1bd82fde6071c5 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9869a2f6aa63ac923bd728d10da63375 = $(`<div id="html_9869a2f6aa63ac923bd728d10da63375" style="width: 100.0%; height: 100.0%;"><b>Cosenza</b><br>Beni: 550</div>`)[0];
+                popup_08a2926ca0affb9d1c1bd82fde6071c5.setContent(html_9869a2f6aa63ac923bd728d10da63375);
+            
+        
+
+        circle_marker_16d00e61a498201480a2e805f70c9213.bindPopup(popup_08a2926ca0affb9d1c1bd82fde6071c5)
+        ;
+
+        
+    
+    
+            circle_marker_16d00e61a498201480a2e805f70c9213.bindTooltip(
+                `<div>
+                     Cosenza: 550 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_41e6250b8e6831f020fbe729c47d4ce8 = L.circleMarker(
+                [45.3168, 9.5028],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.49553208773355, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_a36570b2bfe2dad0951683cabbe1a322 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_85ec29653dbe56602365cb524bfbd6e1 = $(`<div id="html_85ec29653dbe56602365cb524bfbd6e1" style="width: 100.0%; height: 100.0%;"><b>Cremona</b><br>Beni: 122</div>`)[0];
+                popup_a36570b2bfe2dad0951683cabbe1a322.setContent(html_85ec29653dbe56602365cb524bfbd6e1);
+            
+        
+
+        circle_marker_41e6250b8e6831f020fbe729c47d4ce8.bindPopup(popup_a36570b2bfe2dad0951683cabbe1a322)
+        ;
+
+        
+    
+    
+            circle_marker_41e6250b8e6831f020fbe729c47d4ce8.bindTooltip(
+                `<div>
+                     Cremona: 122 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6abbb5e5d1e94bba509899a8023182bb = L.circleMarker(
+                [43.1606, 13.7157],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.186027619821283, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_d3e201058d3d8b293e7a935f0bd1854e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_acef0fe45893a0d1be7d6ae8706c5384 = $(`<div id="html_acef0fe45893a0d1be7d6ae8706c5384" style="width: 100.0%; height: 100.0%;"><b>Crotone</b><br>Beni: 292</div>`)[0];
+                popup_d3e201058d3d8b293e7a935f0bd1854e.setContent(html_acef0fe45893a0d1be7d6ae8706c5384);
+            
+        
+
+        circle_marker_6abbb5e5d1e94bba509899a8023182bb.bindPopup(popup_d3e201058d3d8b293e7a935f0bd1854e)
+        ;
+
+        
+    
+    
+            circle_marker_6abbb5e5d1e94bba509899a8023182bb.bindTooltip(
+                `<div>
+                     Crotone: 292 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_59be957765c4e5e1c9baca4c0dea10b1 = L.circleMarker(
+                [44.3853, 7.5433],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.1259138911454105, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_bb9c66c02a16d63c0f9f8d0355cbe79e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d26f466ec3a83300f2b046d0236ead95 = $(`<div id="html_d26f466ec3a83300f2b046d0236ead95" style="width: 100.0%; height: 100.0%;"><b>Cuneo</b><br>Beni: 31</div>`)[0];
+                popup_bb9c66c02a16d63c0f9f8d0355cbe79e.setContent(html_d26f466ec3a83300f2b046d0236ead95);
+            
+        
+
+        circle_marker_59be957765c4e5e1c9baca4c0dea10b1.bindPopup(popup_bb9c66c02a16d63c0f9f8d0355cbe79e)
+        ;
+
+        
+    
+    
+            circle_marker_59be957765c4e5e1c9baca4c0dea10b1.bindTooltip(
+                `<div>
+                     Cuneo: 31 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6fcdc3f12e9592a5ecdea4d90df8b76 = L.circleMarker(
+                [36.9249, 14.7276],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.763606823720552, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_49f67dd90be46f1f26e771ddce7bb771 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_af6038ccf7b611b209c908ad2db92c64 = $(`<div id="html_af6038ccf7b611b209c908ad2db92c64" style="width: 100.0%; height: 100.0%;"><b>Enna</b><br>Beni: 188</div>`)[0];
+                popup_49f67dd90be46f1f26e771ddce7bb771.setContent(html_af6038ccf7b611b209c908ad2db92c64);
+            
+        
+
+        circle_marker_c6fcdc3f12e9592a5ecdea4d90df8b76.bindPopup(popup_49f67dd90be46f1f26e771ddce7bb771)
+        ;
+
+        
+    
+    
+            circle_marker_c6fcdc3f12e9592a5ecdea4d90df8b76.bindTooltip(
+                `<div>
+                     Enna: 188 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_96d003e828c185fbfcb940504bf6c33d = L.circleMarker(
+                [46.0566, 13.775],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.190901705930138, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_d1f55da0eecc564a4f3324d4e867f1ef = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5afb96443d777058a8934715a6fcdcbc = $(`<div id="html_5afb96443d777058a8934715a6fcdcbc" style="width: 100.0%; height: 100.0%;"><b>Ferrara</b><br>Beni: 47</div>`)[0];
+                popup_d1f55da0eecc564a4f3324d4e867f1ef.setContent(html_5afb96443d777058a8934715a6fcdcbc);
+            
+        
+
+        circle_marker_96d003e828c185fbfcb940504bf6c33d.bindPopup(popup_d1f55da0eecc564a4f3324d4e867f1ef)
+        ;
+
+        
+    
+    
+            circle_marker_96d003e828c185fbfcb940504bf6c33d.bindTooltip(
+                `<div>
+                     Ferrara: 47 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_330a661cdf05012506b5d7d64b0cbc2c = L.circleMarker(
+                [44.8009, 9.5271],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.300568643379366, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_5d627c788b3409af3ee25d485904aa85 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5e6a0e5b6a93eb579055663d5b3d9275 = $(`<div id="html_5e6a0e5b6a93eb579055663d5b3d9275" style="width: 100.0%; height: 100.0%;"><b>Firenze</b><br>Beni: 74</div>`)[0];
+                popup_5d627c788b3409af3ee25d485904aa85.setContent(html_5e6a0e5b6a93eb579055663d5b3d9275);
+            
+        
+
+        circle_marker_330a661cdf05012506b5d7d64b0cbc2c.bindPopup(popup_5d627c788b3409af3ee25d485904aa85)
+        ;
+
+        
+    
+    
+            circle_marker_330a661cdf05012506b5d7d64b0cbc2c.bindTooltip(
+                `<div>
+                     Firenze: 74 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f29d025246d3b0b2d1143145d112b285 = L.circleMarker(
+                [42.4637, 14.2152],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.942323314378554, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_692657bfd13596022da213d32f1112ae = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6ff20bd2fcdf0fe2b1a977301019da91 = $(`<div id="html_6ff20bd2fcdf0fe2b1a977301019da91" style="width: 100.0%; height: 100.0%;"><b>Foggia</b><br>Beni: 232</div>`)[0];
+                popup_692657bfd13596022da213d32f1112ae.setContent(html_6ff20bd2fcdf0fe2b1a977301019da91);
+            
+        
+
+        circle_marker_f29d025246d3b0b2d1143145d112b285.bindPopup(popup_692657bfd13596022da213d32f1112ae)
+        ;
+
+        
+    
+    
+            circle_marker_f29d025246d3b0b2d1143145d112b285.bindTooltip(
+                `<div>
+                     Foggia: 232 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4a4ee8d10e39ee164d5fea33c2f86831 = L.circleMarker(
+                [44.7009, 10.6313],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.5199025182778225, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_ab4e8f6a7436be53ae3faa1cba551ab2 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3201230b0d46e420040d332ae768cd00 = $(`<div id="html_3201230b0d46e420040d332ae768cd00" style="width: 100.0%; height: 100.0%;"><b>Forlì-Cesena</b><br>Beni: 128</div>`)[0];
+                popup_ab4e8f6a7436be53ae3faa1cba551ab2.setContent(html_3201230b0d46e420040d332ae768cd00);
+            
+        
+
+        circle_marker_4a4ee8d10e39ee164d5fea33c2f86831.bindPopup(popup_ab4e8f6a7436be53ae3faa1cba551ab2)
+        ;
+
+        
+    
+    
+            circle_marker_4a4ee8d10e39ee164d5fea33c2f86831.bindTooltip(
+                `<div>
+                     Forlì-Cesena: 128 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_068be68a2b4a965d5d937f1aea82f281 = L.circleMarker(
+                [43.7229, 10.4017],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.007311129163282, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_e27456fc89ce8c202997f5025547158e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d7df5cd1bfeebd323ad88ecc320f6b08 = $(`<div id="html_d7df5cd1bfeebd323ad88ecc320f6b08" style="width: 100.0%; height: 100.0%;"><b>Frosinone</b><br>Beni: 248</div>`)[0];
+                popup_e27456fc89ce8c202997f5025547158e.setContent(html_d7df5cd1bfeebd323ad88ecc320f6b08);
+            
+        
+
+        circle_marker_068be68a2b4a965d5d937f1aea82f281.bindPopup(popup_e27456fc89ce8c202997f5025547158e)
+        ;
+
+        
+    
+    
+            circle_marker_068be68a2b4a965d5d937f1aea82f281.bindTooltip(
+                `<div>
+                     Frosinone: 248 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a1a33cb6cd244b13259d3d59b8e602f1 = L.circleMarker(
+                [44.4056, 8.9463],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.877335499593826, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_a15ed7523ae7c3dd4f7cbdf1685435bb = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_1f1551fb1091ac10598c297ada7d78b6 = $(`<div id="html_1f1551fb1091ac10598c297ada7d78b6" style="width: 100.0%; height: 100.0%;"><b>Genova</b><br>Beni: 216</div>`)[0];
+                popup_a15ed7523ae7c3dd4f7cbdf1685435bb.setContent(html_1f1551fb1091ac10598c297ada7d78b6);
+            
+        
+
+        circle_marker_a1a33cb6cd244b13259d3d59b8e602f1.bindPopup(popup_a15ed7523ae7c3dd4f7cbdf1685435bb)
+        ;
+
+        
+    
+    
+            circle_marker_a1a33cb6cd244b13259d3d59b8e602f1.bindTooltip(
+                `<div>
+                     Genova: 216 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_76e5b7452f328fd71d205b59b8d61d27 = L.circleMarker(
+                [45.8726, 11.6024],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.008123476848091, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_b3159e066fbceb4d20cc11d8a3bf4008 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4668a2979948fda8e80559c6d2a6568b = $(`<div id="html_4668a2979948fda8e80559c6d2a6568b" style="width: 100.0%; height: 100.0%;"><b>Gorizia</b><br>Beni: 2</div>`)[0];
+                popup_b3159e066fbceb4d20cc11d8a3bf4008.setContent(html_4668a2979948fda8e80559c6d2a6568b);
+            
+        
+
+        circle_marker_76e5b7452f328fd71d205b59b8d61d27.bindPopup(popup_b3159e066fbceb4d20cc11d8a3bf4008)
+        ;
+
+        
+    
+    
+            circle_marker_76e5b7452f328fd71d205b59b8d61d27.bindTooltip(
+                `<div>
+                     Gorizia: 2 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1a57d8e359a49c7de5130e199f27db61 = L.circleMarker(
+                [43.7229, 10.4017],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.0446791226645, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_b1f0957a95c34cfb209218c7dfa7442c = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_55c14a17e95c9931143320722c912c3e = $(`<div id="html_55c14a17e95c9931143320722c912c3e" style="width: 100.0%; height: 100.0%;"><b>Grosseto</b><br>Beni: 11</div>`)[0];
+                popup_b1f0957a95c34cfb209218c7dfa7442c.setContent(html_55c14a17e95c9931143320722c912c3e);
+            
+        
+
+        circle_marker_1a57d8e359a49c7de5130e199f27db61.bindPopup(popup_b1f0957a95c34cfb209218c7dfa7442c)
+        ;
+
+        
+    
+    
+            circle_marker_1a57d8e359a49c7de5130e199f27db61.bindTooltip(
+                `<div>
+                     Grosseto: 11 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_65aac6bd73b4d9ea63694e7385756709 = L.circleMarker(
+                [43.8695, 7.7665],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.203086921202274, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_0cebe53828fcefa082a018b406d2961f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_105858fd3a169da134ec9360c73468e8 = $(`<div id="html_105858fd3a169da134ec9360c73468e8" style="width: 100.0%; height: 100.0%;"><b>Imperia</b><br>Beni: 50</div>`)[0];
+                popup_0cebe53828fcefa082a018b406d2961f.setContent(html_105858fd3a169da134ec9360c73468e8);
+            
+        
+
+        circle_marker_65aac6bd73b4d9ea63694e7385756709.bindPopup(popup_0cebe53828fcefa082a018b406d2961f)
+        ;
+
+        
+    
+    
+            circle_marker_65aac6bd73b4d9ea63694e7385756709.bindTooltip(
+                `<div>
+                     Imperia: 50 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3689d034a3217a63f7b0d0474c4d4ff7 = L.circleMarker(
+                [39.9059, 8.592],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.024370430544273, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_ba087237c962751c6067125fad88a196 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ca8d6a26eec6f102f5379bedc7c1d0bd = $(`<div id="html_ca8d6a26eec6f102f5379bedc7c1d0bd" style="width: 100.0%; height: 100.0%;"><b>Isernia</b><br>Beni: 6</div>`)[0];
+                popup_ba087237c962751c6067125fad88a196.setContent(html_ca8d6a26eec6f102f5379bedc7c1d0bd);
+            
+        
+
+        circle_marker_3689d034a3217a63f7b0d0474c4d4ff7.bindPopup(popup_ba087237c962751c6067125fad88a196)
+        ;
+
+        
+    
+    
+            circle_marker_3689d034a3217a63f7b0d0474c4d4ff7.bindTooltip(
+                `<div>
+                     Isernia: 6 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fcfaab9e518070e60b0461e87c351613 = L.circleMarker(
+                [40.916, 14.7887],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.166531275385865, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_7fc19a10965892540c7e9255e2ccbf96 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a0a909b13fc789f1da162c7c93ba29ac = $(`<div id="html_a0a909b13fc789f1da162c7c93ba29ac" style="width: 100.0%; height: 100.0%;"><b>L'Aquila</b><br>Beni: 41</div>`)[0];
+                popup_7fc19a10965892540c7e9255e2ccbf96.setContent(html_a0a909b13fc789f1da162c7c93ba29ac);
+            
+        
+
+        circle_marker_fcfaab9e518070e60b0461e87c351613.bindPopup(popup_7fc19a10965892540c7e9255e2ccbf96)
+        ;
+
+        
+    
+    
+            circle_marker_fcfaab9e518070e60b0461e87c351613.bindTooltip(
+                `<div>
+                     L'Aquila: 41 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9f2582577e15851f7972499d6105db26 = L.circleMarker(
+                [44.1024, 9.8237],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.170593013809911, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_68769686f22c4da801c8487c0e4be477 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6f2a88450b6692ecdb9f37eb7f929a6d = $(`<div id="html_6f2a88450b6692ecdb9f37eb7f929a6d" style="width: 100.0%; height: 100.0%;"><b>La Spezia</b><br>Beni: 42</div>`)[0];
+                popup_68769686f22c4da801c8487c0e4be477.setContent(html_6f2a88450b6692ecdb9f37eb7f929a6d);
+            
+        
+
+        circle_marker_9f2582577e15851f7972499d6105db26.bindPopup(popup_68769686f22c4da801c8487c0e4be477)
+        ;
+
+        
+    
+    
+            circle_marker_9f2582577e15851f7972499d6105db26.bindTooltip(
+                `<div>
+                     La Spezia: 42 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7011be463a41be8214862a2362b16a88 = L.circleMarker(
+                [43.7163, 10.4017],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.06336311941511, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_63f5a42c502a7da464d43d6715d7c75e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e9dd7e9f5811af8ef5e59f03a3676eb8 = $(`<div id="html_e9dd7e9f5811af8ef5e59f03a3676eb8" style="width: 100.0%; height: 100.0%;"><b>Latina</b><br>Beni: 508</div>`)[0];
+                popup_63f5a42c502a7da464d43d6715d7c75e.setContent(html_e9dd7e9f5811af8ef5e59f03a3676eb8);
+            
+        
+
+        circle_marker_7011be463a41be8214862a2362b16a88.bindPopup(popup_63f5a42c502a7da464d43d6715d7c75e)
+        ;
+
+        
+    
+    
+            circle_marker_7011be463a41be8214862a2362b16a88.bindTooltip(
+                `<div>
+                     Latina: 508 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2bb919495efab813d2144e23310495ac = L.circleMarker(
+                [40.3553, 18.175],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.124289195775792, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_94dd116e953f61ab9cf13c2cd63a31ee = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_dead20cf3216026d8bef593564d7ff7a = $(`<div id="html_dead20cf3216026d8bef593564d7ff7a" style="width: 100.0%; height: 100.0%;"><b>Lecce</b><br>Beni: 523</div>`)[0];
+                popup_94dd116e953f61ab9cf13c2cd63a31ee.setContent(html_dead20cf3216026d8bef593564d7ff7a);
+            
+        
+
+        circle_marker_2bb919495efab813d2144e23310495ac.bindPopup(popup_94dd116e953f61ab9cf13c2cd63a31ee)
+        ;
+
+        
+    
+    
+            circle_marker_2bb919495efab813d2144e23310495ac.bindTooltip(
+                `<div>
+                     Lecce: 523 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_efd1d9cbb400d32d527ff3e63cdaa9c8 = L.circleMarker(
+                [43.6158, 13.5189],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.377741673436231, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_b0c46be263ef3da798cbc77be1602b7b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c3a6b65dd98268f22afc2d563983bd6e = $(`<div id="html_c3a6b65dd98268f22afc2d563983bd6e" style="width: 100.0%; height: 100.0%;"><b>Lecco</b><br>Beni: 93</div>`)[0];
+                popup_b0c46be263ef3da798cbc77be1602b7b.setContent(html_c3a6b65dd98268f22afc2d563983bd6e);
+            
+        
+
+        circle_marker_efd1d9cbb400d32d527ff3e63cdaa9c8.bindPopup(popup_b0c46be263ef3da798cbc77be1602b7b)
+        ;
+
+        
+    
+    
+            circle_marker_efd1d9cbb400d32d527ff3e63cdaa9c8.bindTooltip(
+                `<div>
+                     Lecco: 93 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b211cceeacd202a6c98980da439cb9b8 = L.circleMarker(
+                [44.1566, 10.1481],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.215272136474411, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_64c08acf02d9684d638537831d4fdd72 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b0dc90590beb88579dc2bb881052e490 = $(`<div id="html_b0dc90590beb88579dc2bb881052e490" style="width: 100.0%; height: 100.0%;"><b>Livorno</b><br>Beni: 53</div>`)[0];
+                popup_64c08acf02d9684d638537831d4fdd72.setContent(html_b0dc90590beb88579dc2bb881052e490);
+            
+        
+
+        circle_marker_b211cceeacd202a6c98980da439cb9b8.bindPopup(popup_64c08acf02d9684d638537831d4fdd72)
+        ;
+
+        
+    
+    
+            circle_marker_b211cceeacd202a6c98980da439cb9b8.bindTooltip(
+                `<div>
+                     Livorno: 53 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c4e1c00fdc6633264a5cc1a1cc574eae = L.circleMarker(
+                [43.3179, 13.4527],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.109666937449228, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_97f17c4eefeceafc5880ac320951346e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4af61a16b01a2876044676274e6dba6d = $(`<div id="html_4af61a16b01a2876044676274e6dba6d" style="width: 100.0%; height: 100.0%;"><b>Lodi</b><br>Beni: 27</div>`)[0];
+                popup_97f17c4eefeceafc5880ac320951346e.setContent(html_4af61a16b01a2876044676274e6dba6d);
+            
+        
+
+        circle_marker_c4e1c00fdc6633264a5cc1a1cc574eae.bindPopup(popup_97f17c4eefeceafc5880ac320951346e)
+        ;
+
+        
+    
+    
+            circle_marker_c4e1c00fdc6633264a5cc1a1cc574eae.bindTooltip(
+                `<div>
+                     Lodi: 27 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_56839452de2ffb8ee0f0a633deb1f44a = L.circleMarker(
+                [44.0565, 12.5689],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.65800162469537, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_7093cdc108078025f20700192cc2ca13 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_752903aa832dff5cbdfd22b315175fe2 = $(`<div id="html_752903aa832dff5cbdfd22b315175fe2" style="width: 100.0%; height: 100.0%;"><b>Lucca</b><br>Beni: 162</div>`)[0];
+                popup_7093cdc108078025f20700192cc2ca13.setContent(html_752903aa832dff5cbdfd22b315175fe2);
+            
+        
+
+        circle_marker_56839452de2ffb8ee0f0a633deb1f44a.bindPopup(popup_7093cdc108078025f20700192cc2ca13)
+        ;
+
+        
+    
+    
+            circle_marker_56839452de2ffb8ee0f0a633deb1f44a.bindTooltip(
+                `<div>
+                     Lucca: 162 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_14c9d2057341e2fe4d520cbec37b8a08 = L.circleMarker(
+                [44.4184, 12.2035],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.020308692120228, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_5bf53fa1fd522d799cbf72e5752bc926 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4b82e6b9528f5ad9c7fd36ba0d6efb00 = $(`<div id="html_4b82e6b9528f5ad9c7fd36ba0d6efb00" style="width: 100.0%; height: 100.0%;"><b>Macerata</b><br>Beni: 5</div>`)[0];
+                popup_5bf53fa1fd522d799cbf72e5752bc926.setContent(html_4b82e6b9528f5ad9c7fd36ba0d6efb00);
+            
+        
+
+        circle_marker_14c9d2057341e2fe4d520cbec37b8a08.bindPopup(popup_5bf53fa1fd522d799cbf72e5752bc926)
+        ;
+
+        
+    
+    
+            circle_marker_14c9d2057341e2fe4d520cbec37b8a08.bindTooltip(
+                `<div>
+                     Macerata: 5 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0593748702fe16d81c15bb33563d108c = L.circleMarker(
+                [45.9656, 12.6603],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.186839967506093, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_1d9f9bfd790d5e63160153673c049302 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3351163e464b6132538a6d2acc753d3c = $(`<div id="html_3351163e464b6132538a6d2acc753d3c" style="width: 100.0%; height: 100.0%;"><b>Mantova</b><br>Beni: 46</div>`)[0];
+                popup_1d9f9bfd790d5e63160153673c049302.setContent(html_3351163e464b6132538a6d2acc753d3c);
+            
+        
+
+        circle_marker_0593748702fe16d81c15bb33563d108c.bindPopup(popup_1d9f9bfd790d5e63160153673c049302)
+        ;
+
+        
+    
+    
+            circle_marker_0593748702fe16d81c15bb33563d108c.bindTooltip(
+                `<div>
+                     Mantova: 46 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_345071ebdd00f6267175e8d9c87cfaed = L.circleMarker(
+                [44.2226, 12.0408],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.109666937449228, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_6a7d2011dc0e135f31842d1f12a6263d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_1019ab1ce3f24224f158abcc0aa233e5 = $(`<div id="html_1019ab1ce3f24224f158abcc0aa233e5" style="width: 100.0%; height: 100.0%;"><b>Massa-Carrara</b><br>Beni: 27</div>`)[0];
+                popup_6a7d2011dc0e135f31842d1f12a6263d.setContent(html_1019ab1ce3f24224f158abcc0aa233e5);
+            
+        
+
+        circle_marker_345071ebdd00f6267175e8d9c87cfaed.bindPopup(popup_6a7d2011dc0e135f31842d1f12a6263d)
+        ;
+
+        
+    
+    
+            circle_marker_345071ebdd00f6267175e8d9c87cfaed.bindTooltip(
+                `<div>
+                     Massa-Carrara: 27 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2794bed3a9e3f460af17928690ca4d47 = L.circleMarker(
+                [41.4619, 15.5523],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.1543460601137285, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_55c09d93db5f70790969d9561debf7eb = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d779cdb1e3f85992ce6585fbd6dc182b = $(`<div id="html_d779cdb1e3f85992ce6585fbd6dc182b" style="width: 100.0%; height: 100.0%;"><b>Matera</b><br>Beni: 38</div>`)[0];
+                popup_55c09d93db5f70790969d9561debf7eb.setContent(html_d779cdb1e3f85992ce6585fbd6dc182b);
+            
+        
+
+        circle_marker_2794bed3a9e3f460af17928690ca4d47.bindPopup(popup_55c09d93db5f70790969d9561debf7eb)
+        ;
+
+        
+    
+    
+            circle_marker_2794bed3a9e3f460af17928690ca4d47.bindTooltip(
+                `<div>
+                     Matera: 38 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7abf46ae4d2c76bbcd985b7c51abcc57 = L.circleMarker(
+                [38.1793, 15.5544],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.713241267262388, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_d52da9d5e29d96f65e92bffa4dc5c0bc = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_de7f9eb73642d584eb1a14674ad960b7 = $(`<div id="html_de7f9eb73642d584eb1a14674ad960b7" style="width: 100.0%; height: 100.0%;"><b>Messina</b><br>Beni: 668</div>`)[0];
+                popup_d52da9d5e29d96f65e92bffa4dc5c0bc.setContent(html_de7f9eb73642d584eb1a14674ad960b7);
+            
+        
+
+        circle_marker_7abf46ae4d2c76bbcd985b7c51abcc57.bindPopup(popup_d52da9d5e29d96f65e92bffa4dc5c0bc)
+        ;
+
+        
+    
+    
+            circle_marker_7abf46ae4d2c76bbcd985b7c51abcc57.bindTooltip(
+                `<div>
+                     Messina: 668 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_412c1c356bb245ab5854a541d70e80f0 = L.circleMarker(
+                [45.4654, 9.1859],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.450040617384241, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_eeae685e0218d50cbba202c0bee1ed02 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_608e246d84032813c2d2c4723563b087 = $(`<div id="html_608e246d84032813c2d2c4723563b087" style="width: 100.0%; height: 100.0%;"><b>Milano</b><br>Beni: 1,588</div>`)[0];
+                popup_eeae685e0218d50cbba202c0bee1ed02.setContent(html_608e246d84032813c2d2c4723563b087);
+            
+        
+
+        circle_marker_412c1c356bb245ab5854a541d70e80f0.bindPopup(popup_eeae685e0218d50cbba202c0bee1ed02)
+        ;
+
+        
+    
+    
+            circle_marker_412c1c356bb245ab5854a541d70e80f0.bindTooltip(
+                `<div>
+                     Milano: 1,588 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7cfc6c6755f0b4d79a98f07c60acf394 = L.circleMarker(
+                [45.6517, 13.7689],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.280259951259139, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_7664621ea9c67c8b0d42254756c641af = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4fa1d591ef54770b09d352565e2e5408 = $(`<div id="html_4fa1d591ef54770b09d352565e2e5408" style="width: 100.0%; height: 100.0%;"><b>Modena</b><br>Beni: 69</div>`)[0];
+                popup_7664621ea9c67c8b0d42254756c641af.setContent(html_4fa1d591ef54770b09d352565e2e5408);
+            
+        
+
+        circle_marker_7cfc6c6755f0b4d79a98f07c60acf394.bindPopup(popup_7664621ea9c67c8b0d42254756c641af)
+        ;
+
+        
+    
+    
+            circle_marker_7cfc6c6755f0b4d79a98f07c60acf394.bindTooltip(
+                `<div>
+                     Modena: 69 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_691f39f2bdc14637911848b02d7271f4 = L.circleMarker(
+                [42.4167, 12.1051],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.81965881397238, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_f863c78481dba00c55ea895bff1cc716 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_75aa2313987655a4637eeed94333e7fb = $(`<div id="html_75aa2313987655a4637eeed94333e7fb" style="width: 100.0%; height: 100.0%;"><b>Monza e della Brianza</b><br>Beni: 448</div>`)[0];
+                popup_f863c78481dba00c55ea895bff1cc716.setContent(html_75aa2313987655a4637eeed94333e7fb);
+            
+        
+
+        circle_marker_691f39f2bdc14637911848b02d7271f4.bindPopup(popup_f863c78481dba00c55ea895bff1cc716)
+        ;
+
+        
+    
+    
+            circle_marker_691f39f2bdc14637911848b02d7271f4.bindTooltip(
+                `<div>
+                     Monza e della Brianza: 448 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ba5355e3f4a9fd01ee709ea338d8a77 = L.circleMarker(
+                [40.8518, 14.2681],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.37692932575142, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_992a7df071f29e6cfcbf08f220573d7d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e69f77dc36c52f48fa806ff1498d4a69 = $(`<div id="html_e69f77dc36c52f48fa806ff1498d4a69" style="width: 100.0%; height: 100.0%;"><b>Napoli</b><br>Beni: 2,801</div>`)[0];
+                popup_992a7df071f29e6cfcbf08f220573d7d.setContent(html_e69f77dc36c52f48fa806ff1498d4a69);
+            
+        
+
+        circle_marker_3ba5355e3f4a9fd01ee709ea338d8a77.bindPopup(popup_992a7df071f29e6cfcbf08f220573d7d)
+        ;
+
+        
+    
+    
+            circle_marker_3ba5355e3f4a9fd01ee709ea338d8a77.bindTooltip(
+                `<div>
+                     Napoli: 2,801 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_399a1a996dd848a020d971f4d08e4a31 = L.circleMarker(
+                [45.4654, 8.6211],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.129975629569456, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_edf9eb112b8dbdc277d0a80d3ad87be6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_afc8d18a2dd612213118116654cd7b9f = $(`<div id="html_afc8d18a2dd612213118116654cd7b9f" style="width: 100.0%; height: 100.0%;"><b>Novara</b><br>Beni: 32</div>`)[0];
+                popup_edf9eb112b8dbdc277d0a80d3ad87be6.setContent(html_afc8d18a2dd612213118116654cd7b9f);
+            
+        
+
+        circle_marker_399a1a996dd848a020d971f4d08e4a31.bindPopup(popup_edf9eb112b8dbdc277d0a80d3ad87be6)
+        ;
+
+        
+    
+    
+            circle_marker_399a1a996dd848a020d971f4d08e4a31.bindTooltip(
+                `<div>
+                     Novara: 32 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7c334752ba8c3df203a683278e1dc78 = L.circleMarker(
+                [39.2238, 9.1217],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.040617384240455, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_747284377e2d2b940922f78151dc19ce = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ff59b5eda53597a0e37abe99e9dde180 = $(`<div id="html_ff59b5eda53597a0e37abe99e9dde180" style="width: 100.0%; height: 100.0%;"><b>Nuoro</b><br>Beni: 10</div>`)[0];
+                popup_747284377e2d2b940922f78151dc19ce.setContent(html_ff59b5eda53597a0e37abe99e9dde180);
+            
+        
+
+        circle_marker_f7c334752ba8c3df203a683278e1dc78.bindPopup(popup_747284377e2d2b940922f78151dc19ce)
+        ;
+
+        
+    
+    
+            circle_marker_f7c334752ba8c3df203a683278e1dc78.bindTooltip(
+                `<div>
+                     Nuoro: 10 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_31db9cdeceefb108883194eb3315ba68 = L.circleMarker(
+                [39.1672, 9.0145],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.004061738424046, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_d6c6919fbd7ae009e1e14757e163ae2f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3a7c17e92b89b5863473f32b41806c52 = $(`<div id="html_3a7c17e92b89b5863473f32b41806c52" style="width: 100.0%; height: 100.0%;"><b>Oristano</b><br>Beni: 1</div>`)[0];
+                popup_d6c6919fbd7ae009e1e14757e163ae2f.setContent(html_3a7c17e92b89b5863473f32b41806c52);
+            
+        
+
+        circle_marker_31db9cdeceefb108883194eb3315ba68.bindPopup(popup_d6c6919fbd7ae009e1e14757e163ae2f)
+        ;
+
+        
+    
+    
+            circle_marker_31db9cdeceefb108883194eb3315ba68.bindTooltip(
+                `<div>
+                     Oristano: 1 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8ef3e4bd1f7be09f9a68199e95a816d3 = L.circleMarker(
+                [45.5415, 11.5488],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.231519090170593, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_c5eb1c26a1220720575b59d4998bab6b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_867e1fcb1b1d60505ec9e1967ebc9e0d = $(`<div id="html_867e1fcb1b1d60505ec9e1967ebc9e0d" style="width: 100.0%; height: 100.0%;"><b>Padova</b><br>Beni: 57</div>`)[0];
+                popup_c5eb1c26a1220720575b59d4998bab6b.setContent(html_867e1fcb1b1d60505ec9e1967ebc9e0d);
+            
+        
+
+        circle_marker_8ef3e4bd1f7be09f9a68199e95a816d3.bindPopup(popup_c5eb1c26a1220720575b59d4998bab6b)
+        ;
+
+        
+    
+    
+            circle_marker_8ef3e4bd1f7be09f9a68199e95a816d3.bindTooltip(
+                `<div>
+                     Padova: 57 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f6afc92aa1571aa837f5db6523c7512e = L.circleMarker(
+                [38.1157, 13.3615],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 30.0, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_796dae95939c3f0e9961495efc61c22d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b24278af66112c88b82c66566e095ef2 = $(`<div id="html_b24278af66112c88b82c66566e095ef2" style="width: 100.0%; height: 100.0%;"><b>Palermo</b><br>Beni: 6,155</div>`)[0];
+                popup_796dae95939c3f0e9961495efc61c22d.setContent(html_b24278af66112c88b82c66566e095ef2);
+            
+        
+
+        circle_marker_f6afc92aa1571aa837f5db6523c7512e.bindPopup(popup_796dae95939c3f0e9961495efc61c22d)
+        ;
+
+        
+    
+    
+            circle_marker_f6afc92aa1571aa837f5db6523c7512e.bindTooltip(
+                `<div>
+                     Palermo: 6,155 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c2eedae4243a07f8de83a1c79b98bfa0 = L.circleMarker(
+                [45.9656, 12.6603],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.8935824532900085, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_fd09e317ea0f2b009424c08f18f654ef = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_bf4f45e12bbe4c5f465773c2225e31fc = $(`<div id="html_bf4f45e12bbe4c5f465773c2225e31fc" style="width: 100.0%; height: 100.0%;"><b>Parma</b><br>Beni: 220</div>`)[0];
+                popup_fd09e317ea0f2b009424c08f18f654ef.setContent(html_bf4f45e12bbe4c5f465773c2225e31fc);
+            
+        
+
+        circle_marker_c2eedae4243a07f8de83a1c79b98bfa0.bindPopup(popup_fd09e317ea0f2b009424c08f18f654ef)
+        ;
+
+        
+    
+    
+            circle_marker_c2eedae4243a07f8de83a1c79b98bfa0.bindTooltip(
+                `<div>
+                     Parma: 220 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_188b20bf7093b6cb1c361996409b778f = L.circleMarker(
+                [45.1564, 10.794],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.637692932575142, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_61478a0e8ded43a8b5eab36f7aa407dd = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f0e536c389d5541412ac4790908b0a90 = $(`<div id="html_f0e536c389d5541412ac4790908b0a90" style="width: 100.0%; height: 100.0%;"><b>Pavia</b><br>Beni: 157</div>`)[0];
+                popup_61478a0e8ded43a8b5eab36f7aa407dd.setContent(html_f0e536c389d5541412ac4790908b0a90);
+            
+        
+
+        circle_marker_188b20bf7093b6cb1c361996409b778f.bindPopup(popup_61478a0e8ded43a8b5eab36f7aa407dd)
+        ;
+
+        
+    
+    
+            circle_marker_188b20bf7093b6cb1c361996409b778f.bindTooltip(
+                `<div>
+                     Pavia: 157 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4149736f0f0c4d8c503bc1363a05290f = L.circleMarker(
+                [43.4636, 11.8783],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.479285134037368, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_bb04c4891df78cc6d9e770d64287e1e3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d80c1072628c2cd25b9f882198de03d0 = $(`<div id="html_d80c1072628c2cd25b9f882198de03d0" style="width: 100.0%; height: 100.0%;"><b>Perugia</b><br>Beni: 118</div>`)[0];
+                popup_bb04c4891df78cc6d9e770d64287e1e3.setContent(html_d80c1072628c2cd25b9f882198de03d0);
+            
+        
+
+        circle_marker_4149736f0f0c4d8c503bc1363a05290f.bindPopup(popup_bb04c4891df78cc6d9e770d64287e1e3)
+        ;
+
+        
+    
+    
+            circle_marker_4149736f0f0c4d8c503bc1363a05290f.bindTooltip(
+                `<div>
+                     Perugia: 118 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0f8d6ab5a5a8113e42d0cba3d03c64c2 = L.circleMarker(
+                [44.4949, 11.3426],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.16246953696182, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_62035f574f671da133a9fcf238c5d217 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c93628e2861ab2ab8ebf2f7e3081c8a4 = $(`<div id="html_c93628e2861ab2ab8ebf2f7e3081c8a4" style="width: 100.0%; height: 100.0%;"><b>Pesaro e Urbino</b><br>Beni: 40</div>`)[0];
+                popup_62035f574f671da133a9fcf238c5d217.setContent(html_c93628e2861ab2ab8ebf2f7e3081c8a4);
+            
+        
+
+        circle_marker_0f8d6ab5a5a8113e42d0cba3d03c64c2.bindPopup(popup_62035f574f671da133a9fcf238c5d217)
+        ;
+
+        
+    
+    
+            circle_marker_0f8d6ab5a5a8113e42d0cba3d03c64c2.bindTooltip(
+                `<div>
+                     Pesaro e Urbino: 40 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_81155f395f3de7f7a241dac61fea3ed6 = L.circleMarker(
+                [41.5931, 14.2319],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.458976441917141, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_b14f38b8236e894e6227246e531630d7 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_1e65b6b9b58f2112a7e7f03b2692e2b2 = $(`<div id="html_1e65b6b9b58f2112a7e7f03b2692e2b2" style="width: 100.0%; height: 100.0%;"><b>Pescara</b><br>Beni: 113</div>`)[0];
+                popup_b14f38b8236e894e6227246e531630d7.setContent(html_1e65b6b9b58f2112a7e7f03b2692e2b2);
+            
+        
+
+        circle_marker_81155f395f3de7f7a241dac61fea3ed6.bindPopup(popup_b14f38b8236e894e6227246e531630d7)
+        ;
+
+        
+    
+    
+            circle_marker_81155f395f3de7f7a241dac61fea3ed6.bindTooltip(
+                `<div>
+                     Pescara: 113 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_df28f07448d98b21c7725d373d690a80 = L.circleMarker(
+                [46.0664, 11.1198],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.227457351746548, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_733b3c51355e448281a21e802dc93580 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ccf0e64094f6f6ceec98b51f809b384f = $(`<div id="html_ccf0e64094f6f6ceec98b51f809b384f" style="width: 100.0%; height: 100.0%;"><b>Piacenza</b><br>Beni: 56</div>`)[0];
+                popup_733b3c51355e448281a21e802dc93580.setContent(html_ccf0e64094f6f6ceec98b51f809b384f);
+            
+        
+
+        circle_marker_df28f07448d98b21c7725d373d690a80.bindPopup(popup_733b3c51355e448281a21e802dc93580)
+        ;
+
+        
+    
+    
+            circle_marker_df28f07448d98b21c7725d373d690a80.bindTooltip(
+                `<div>
+                     Piacenza: 56 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_56f4cf2da07ee252ef56865523b6e289 = L.circleMarker(
+                [43.7687, 11.2558],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.268074735987002, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_eef81ef24c01a656f3195936a9eb7619 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9bbd52764cac0c301157daca71aad93b = $(`<div id="html_9bbd52764cac0c301157daca71aad93b" style="width: 100.0%; height: 100.0%;"><b>Pisa</b><br>Beni: 66</div>`)[0];
+                popup_eef81ef24c01a656f3195936a9eb7619.setContent(html_9bbd52764cac0c301157daca71aad93b);
+            
+        
+
+        circle_marker_56f4cf2da07ee252ef56865523b6e289.bindPopup(popup_eef81ef24c01a656f3195936a9eb7619)
+        ;
+
+        
+    
+    
+            circle_marker_56f4cf2da07ee252ef56865523b6e289.bindTooltip(
+                `<div>
+                     Pisa: 66 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_396b7d28571bb7bf05381814fa6e6766 = L.circleMarker(
+                [44.7009, 10.0625],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.16246953696182, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_b107e404e0f57b30d94c6b68d2e37799 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a193a5701f783a0b16167bffe20c50d4 = $(`<div id="html_a193a5701f783a0b16167bffe20c50d4" style="width: 100.0%; height: 100.0%;"><b>Pistoia</b><br>Beni: 40</div>`)[0];
+                popup_b107e404e0f57b30d94c6b68d2e37799.setContent(html_a193a5701f783a0b16167bffe20c50d4);
+            
+        
+
+        circle_marker_396b7d28571bb7bf05381814fa6e6766.bindPopup(popup_b107e404e0f57b30d94c6b68d2e37799)
+        ;
+
+        
+    
+    
+            circle_marker_396b7d28571bb7bf05381814fa6e6766.bindTooltip(
+                `<div>
+                     Pistoia: 40 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_803847570472249ec4f6ca8a5d136c35 = L.circleMarker(
+                [40.3215, 9.3289],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.077173030056865, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_20a7ba36e1c2ded28cf14912b2081503 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_baffc2bc516179553f4a5f15856e9f4f = $(`<div id="html_baffc2bc516179553f4a5f15856e9f4f" style="width: 100.0%; height: 100.0%;"><b>Pordenone</b><br>Beni: 19</div>`)[0];
+                popup_20a7ba36e1c2ded28cf14912b2081503.setContent(html_baffc2bc516179553f4a5f15856e9f4f);
+            
+        
+
+        circle_marker_803847570472249ec4f6ca8a5d136c35.bindPopup(popup_20a7ba36e1c2ded28cf14912b2081503)
+        ;
+
+        
+    
+    
+            circle_marker_803847570472249ec4f6ca8a5d136c35.bindTooltip(
+                `<div>
+                     Pordenone: 19 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6697098c8e24857d6ae170323f55cddf = L.circleMarker(
+                [40.4767, 17.2284],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.073111291632819, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_42c553cded8d71f57e6ee5fd86464dd2 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_1dda3e4d3769ce5154e388a59e0f6d4d = $(`<div id="html_1dda3e4d3769ce5154e388a59e0f6d4d" style="width: 100.0%; height: 100.0%;"><b>Potenza</b><br>Beni: 18</div>`)[0];
+                popup_42c553cded8d71f57e6ee5fd86464dd2.setContent(html_1dda3e4d3769ce5154e388a59e0f6d4d);
+            
+        
+
+        circle_marker_6697098c8e24857d6ae170323f55cddf.bindPopup(popup_42c553cded8d71f57e6ee5fd86464dd2)
+        ;
+
+        
+    
+    
+            circle_marker_6697098c8e24857d6ae170323f55cddf.bindTooltip(
+                `<div>
+                     Potenza: 18 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_48033b865a7ca7af0b1c65ca59b88b3d = L.circleMarker(
+                [43.9104, 12.9135],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.121852152721365, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_276199f1bbe9b18817208a64b8db7c7f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_8f0251decd6b89f9fc73f4897a4f5200 = $(`<div id="html_8f0251decd6b89f9fc73f4897a4f5200" style="width: 100.0%; height: 100.0%;"><b>Prato</b><br>Beni: 30</div>`)[0];
+                popup_276199f1bbe9b18817208a64b8db7c7f.setContent(html_8f0251decd6b89f9fc73f4897a4f5200);
+            
+        
+
+        circle_marker_48033b865a7ca7af0b1c65ca59b88b3d.bindPopup(popup_276199f1bbe9b18817208a64b8db7c7f)
+        ;
+
+        
+    
+    
+            circle_marker_48033b865a7ca7af0b1c65ca59b88b3d.bindTooltip(
+                `<div>
+                     Prato: 30 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_86774afc03a816e45a12209f6e09f2a0 = L.circleMarker(
+                [37.3148, 13.5754],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.467099918765231, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_d939f41049d5594082d4fc69a9f9dd42 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_7c1d11595cb1b6e11e9e54b364be31e3 = $(`<div id="html_7c1d11595cb1b6e11e9e54b364be31e3" style="width: 100.0%; height: 100.0%;"><b>Ragusa</b><br>Beni: 115</div>`)[0];
+                popup_d939f41049d5594082d4fc69a9f9dd42.setContent(html_7c1d11595cb1b6e11e9e54b364be31e3);
+            
+        
+
+        circle_marker_86774afc03a816e45a12209f6e09f2a0.bindPopup(popup_d939f41049d5594082d4fc69a9f9dd42)
+        ;
+
+        
+    
+    
+            circle_marker_86774afc03a816e45a12209f6e09f2a0.bindTooltip(
+                `<div>
+                     Ragusa: 115 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_96f4a51ce2a5a16ef1eb6e668f49f3c6 = L.circleMarker(
+                [45.7009, 13.2369],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.178716490658002, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_9e7ab69359d765a28bb0c2c84b463b9e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_738900c1c735a353c17f8fb7b55366da = $(`<div id="html_738900c1c735a353c17f8fb7b55366da" style="width: 100.0%; height: 100.0%;"><b>Ravenna</b><br>Beni: 44</div>`)[0];
+                popup_9e7ab69359d765a28bb0c2c84b463b9e.setContent(html_738900c1c735a353c17f8fb7b55366da);
+            
+        
+
+        circle_marker_96f4a51ce2a5a16ef1eb6e668f49f3c6.bindPopup(popup_9e7ab69359d765a28bb0c2c84b463b9e)
+        ;
+
+        
+    
+    
+            circle_marker_96f4a51ce2a5a16ef1eb6e668f49f3c6.bindTooltip(
+                `<div>
+                     Ravenna: 44 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_38ef3708a2f186faef0b951ad190bb75 = L.circleMarker(
+                [38.9107, 16.5877],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.643379366368805, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_1d205abd6d3f0ddd70806338e5f47059 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_40193e40624424065fb4e1200077915e = $(`<div id="html_40193e40624424065fb4e1200077915e" style="width: 100.0%; height: 100.0%;"><b>Reggio di Calabria</b><br>Beni: 3,359</div>`)[0];
+                popup_1d205abd6d3f0ddd70806338e5f47059.setContent(html_40193e40624424065fb4e1200077915e);
+            
+        
+
+        circle_marker_38ef3708a2f186faef0b951ad190bb75.bindPopup(popup_1d205abd6d3f0ddd70806338e5f47059)
+        ;
+
+        
+    
+    
+            circle_marker_38ef3708a2f186faef0b951ad190bb75.bindTooltip(
+                `<div>
+                     Reggio di Calabria: 3,359 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_60fc888e73580f56bad671677f1053d4 = L.circleMarker(
+                [46.0566, 13.775],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.7067424857839155, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_57ecd9c6e893d768901df96a6034db41 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_0d48b893d5423df2eb13464fd6400c6b = $(`<div id="html_0d48b893d5423df2eb13464fd6400c6b" style="width: 100.0%; height: 100.0%;"><b>Reggio nell'Emilia</b><br>Beni: 174</div>`)[0];
+                popup_57ecd9c6e893d768901df96a6034db41.setContent(html_0d48b893d5423df2eb13464fd6400c6b);
+            
+        
+
+        circle_marker_60fc888e73580f56bad671677f1053d4.bindPopup(popup_57ecd9c6e893d768901df96a6034db41)
+        ;
+
+        
+    
+    
+            circle_marker_60fc888e73580f56bad671677f1053d4.bindTooltip(
+                `<div>
+                     Reggio nell'Emilia: 174 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_268fd907e9647dab275edcce580bfb7f = L.circleMarker(
+                [42.7405, 11.1148],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.048740861088546, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_c156cb299511bd9cf214a73c83347ad3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_1ea81f4b85137f29870ab6344b1f4217 = $(`<div id="html_1ea81f4b85137f29870ab6344b1f4217" style="width: 100.0%; height: 100.0%;"><b>Rieti</b><br>Beni: 12</div>`)[0];
+                popup_c156cb299511bd9cf214a73c83347ad3.setContent(html_1ea81f4b85137f29870ab6344b1f4217);
+            
+        
+
+        circle_marker_268fd907e9647dab275edcce580bfb7f.bindPopup(popup_c156cb299511bd9cf214a73c83347ad3)
+        ;
+
+        
+    
+    
+            circle_marker_268fd907e9647dab275edcce580bfb7f.bindTooltip(
+                `<div>
+                     Rieti: 12 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f38084d56f8272d8bf5260bcd188b937 = L.circleMarker(
+                [42.8519, 13.5749],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.203086921202274, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_d9b4df9e8ce01521ef55a52d41244bed = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_69dfb8160e20e7781f8c18b1bd543b90 = $(`<div id="html_69dfb8160e20e7781f8c18b1bd543b90" style="width: 100.0%; height: 100.0%;"><b>Rimini</b><br>Beni: 50</div>`)[0];
+                popup_d9b4df9e8ce01521ef55a52d41244bed.setContent(html_69dfb8160e20e7781f8c18b1bd543b90);
+            
+        
+
+        circle_marker_f38084d56f8272d8bf5260bcd188b937.bindPopup(popup_d9b4df9e8ce01521ef55a52d41244bed)
+        ;
+
+        
+    
+    
+            circle_marker_f38084d56f8272d8bf5260bcd188b937.bindTooltip(
+                `<div>
+                     Rimini: 50 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_667775fa6c6d7d2f3b53e5f99d02569a = L.circleMarker(
+                [43.5228, 10.5147],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.047928513403736, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_d7364298ec2ec55a0b28bb82af422f93 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d75d30a08420e79efe21df3edd0c74e2 = $(`<div id="html_d75d30a08420e79efe21df3edd0c74e2" style="width: 100.0%; height: 100.0%;"><b>Roma</b><br>Beni: 1,489</div>`)[0];
+                popup_d7364298ec2ec55a0b28bb82af422f93.setContent(html_d75d30a08420e79efe21df3edd0c74e2);
+            
+        
+
+        circle_marker_667775fa6c6d7d2f3b53e5f99d02569a.bindPopup(popup_d7364298ec2ec55a0b28bb82af422f93)
+        ;
+
+        
+    
+    
+            circle_marker_667775fa6c6d7d2f3b53e5f99d02569a.bindTooltip(
+                `<div>
+                     Roma: 1,489 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_91a9aca8bd9aba08f2955f995f8658ab = L.circleMarker(
+                [45.4384, 10.9932],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.020308692120228, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_e2dfdea10b0b68be031624a5b67df692 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_96b449bd0ab1ff404a59908005565c1e = $(`<div id="html_96b449bd0ab1ff404a59908005565c1e" style="width: 100.0%; height: 100.0%;"><b>Rovigo</b><br>Beni: 5</div>`)[0];
+                popup_e2dfdea10b0b68be031624a5b67df692.setContent(html_96b449bd0ab1ff404a59908005565c1e);
+            
+        
+
+        circle_marker_91a9aca8bd9aba08f2955f995f8658ab.bindPopup(popup_e2dfdea10b0b68be031624a5b67df692)
+        ;
+
+        
+    
+    
+            circle_marker_91a9aca8bd9aba08f2955f995f8658ab.bindTooltip(
+                `<div>
+                     Rovigo: 5 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a21349028471d4c0626dfe4da443270d = L.circleMarker(
+                [41.1174, 14.7887],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.14378554021121, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_868cdad22ca45d42fa90c9becf419de6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_47ee2c08c6158c34b6c05d808ea37fa0 = $(`<div id="html_47ee2c08c6158c34b6c05d808ea37fa0" style="width: 100.0%; height: 100.0%;"><b>Salerno</b><br>Beni: 774</div>`)[0];
+                popup_868cdad22ca45d42fa90c9becf419de6.setContent(html_47ee2c08c6158c34b6c05d808ea37fa0);
+            
+        
+
+        circle_marker_a21349028471d4c0626dfe4da443270d.bindPopup(popup_868cdad22ca45d42fa90c9becf419de6)
+        ;
+
+        
+    
+    
+            circle_marker_a21349028471d4c0626dfe4da443270d.bindTooltip(
+                `<div>
+                     Salerno: 774 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_df41a2733d5b8fccf7f71fea1e399691 = L.circleMarker(
+                [37.5624, 14.2773],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.597075548334687, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_af716080c07dd5d8525adaf470f8b17f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_79563ebc2f628cf90965bd917bf0cc29 = $(`<div id="html_79563ebc2f628cf90965bd917bf0cc29" style="width: 100.0%; height: 100.0%;"><b>Sassari</b><br>Beni: 147</div>`)[0];
+                popup_af716080c07dd5d8525adaf470f8b17f.setContent(html_79563ebc2f628cf90965bd917bf0cc29);
+            
+        
+
+        circle_marker_df41a2733d5b8fccf7f71fea1e399691.bindPopup(popup_af716080c07dd5d8525adaf470f8b17f)
+        ;
+
+        
+    
+    
+            circle_marker_df41a2733d5b8fccf7f71fea1e399691.bindTooltip(
+                `<div>
+                     Sassari: 147 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d77d1088067fad2e63afbcca62f736a3 = L.circleMarker(
+                [44.3076, 8.4763],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.284321689683185, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_b8eb085843876cccace280a0b92c216e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a7cc017c5a09ace2a50f4f285722919b = $(`<div id="html_a7cc017c5a09ace2a50f4f285722919b" style="width: 100.0%; height: 100.0%;"><b>Savona</b><br>Beni: 70</div>`)[0];
+                popup_b8eb085843876cccace280a0b92c216e.setContent(html_a7cc017c5a09ace2a50f4f285722919b);
+            
+        
+
+        circle_marker_d77d1088067fad2e63afbcca62f736a3.bindPopup(popup_b8eb085843876cccace280a0b92c216e)
+        ;
+
+        
+    
+    
+            circle_marker_d77d1088067fad2e63afbcca62f736a3.bindTooltip(
+                `<div>
+                     Savona: 70 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5fdb345d90b10386cf255b6e21ed694b = L.circleMarker(
+                [43.8777, 11.0961],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.097481722177092, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_91a9d70cd0359296be714e96561970a3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_52b079fbc83e9ab39aac94e2b9036768 = $(`<div id="html_52b079fbc83e9ab39aac94e2b9036768" style="width: 100.0%; height: 100.0%;"><b>Siena</b><br>Beni: 24</div>`)[0];
+                popup_91a9d70cd0359296be714e96561970a3.setContent(html_52b079fbc83e9ab39aac94e2b9036768);
+            
+        
+
+        circle_marker_5fdb345d90b10386cf255b6e21ed694b.bindPopup(popup_91a9d70cd0359296be714e96561970a3)
+        ;
+
+        
+    
+    
+            circle_marker_5fdb345d90b10386cf255b6e21ed694b.bindTooltip(
+                `<div>
+                     Siena: 24 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_30bd54e4c1081d27510e735c69fc9302 = L.circleMarker(
+                [37.4939, 14.0604],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.051990251827783, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_52f3a25a8478197d8a80dc9c83a18623 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_435aaaff9dc7be01ae598858bf230555 = $(`<div id="html_435aaaff9dc7be01ae598858bf230555" style="width: 100.0%; height: 100.0%;"><b>Siracusa</b><br>Beni: 259</div>`)[0];
+                popup_52f3a25a8478197d8a80dc9c83a18623.setContent(html_435aaaff9dc7be01ae598858bf230555);
+            
+        
+
+        circle_marker_30bd54e4c1081d27510e735c69fc9302.bindPopup(popup_52f3a25a8478197d8a80dc9c83a18623)
+        ;
+
+        
+    
+    
+            circle_marker_30bd54e4c1081d27510e735c69fc9302.bindTooltip(
+                `<div>
+                     Siracusa: 259 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af707d106be9817ca4746d68bf29ea18 = L.circleMarker(
+                [45.7009, 9.7718],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.129975629569456, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_ba6ce789be0c6779b9b0c07e1c3203ad = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b43cba427a4b142e2eeab15c44ef5b83 = $(`<div id="html_b43cba427a4b142e2eeab15c44ef5b83" style="width: 100.0%; height: 100.0%;"><b>Sondrio</b><br>Beni: 32</div>`)[0];
+                popup_ba6ce789be0c6779b9b0c07e1c3203ad.setContent(html_b43cba427a4b142e2eeab15c44ef5b83);
+            
+        
+
+        circle_marker_af707d106be9817ca4746d68bf29ea18.bindPopup(popup_ba6ce789be0c6779b9b0c07e1c3203ad)
+        ;
+
+        
+    
+    
+            circle_marker_af707d106be9817ca4746d68bf29ea18.bindTooltip(
+                `<div>
+                     Sondrio: 32 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66a512c4be27673d96076ac0851a449b = L.circleMarker(
+                [44.6477, 10.925],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.138099106417546, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_10a98bffa37ff2c0861488df44dd8839 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_18083bbfa1edd75bf586ae7f838d7d3a = $(`<div id="html_18083bbfa1edd75bf586ae7f838d7d3a" style="width: 100.0%; height: 100.0%;"><b>Sud Sardegna</b><br>Beni: 34</div>`)[0];
+                popup_10a98bffa37ff2c0861488df44dd8839.setContent(html_18083bbfa1edd75bf586ae7f838d7d3a);
+            
+        
+
+        circle_marker_66a512c4be27673d96076ac0851a449b.bindPopup(popup_10a98bffa37ff2c0861488df44dd8839)
+        ;
+
+        
+    
+    
+            circle_marker_66a512c4be27673d96076ac0851a449b.bindTooltip(
+                `<div>
+                     Sud Sardegna: 34 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0303b1e0602a7e50565c2a491c9bb86c = L.circleMarker(
+                [42.5489, 13.5479],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.575954508529651, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_9d574d79bcf2e34bad694d60fe4cbc39 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3963ec9b369d0696c891f3692e5845ae = $(`<div id="html_3963ec9b369d0696c891f3692e5845ae" style="width: 100.0%; height: 100.0%;"><b>Taranto</b><br>Beni: 388</div>`)[0];
+                popup_9d574d79bcf2e34bad694d60fe4cbc39.setContent(html_3963ec9b369d0696c891f3692e5845ae);
+            
+        
+
+        circle_marker_0303b1e0602a7e50565c2a491c9bb86c.bindPopup(popup_9d574d79bcf2e34bad694d60fe4cbc39)
+        ;
+
+        
+    
+    
+            circle_marker_0303b1e0602a7e50565c2a491c9bb86c.bindTooltip(
+                `<div>
+                     Taranto: 388 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3480beea286249f4556771d605cf022d = L.circleMarker(
+                [41.6264, 14.9987],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.272136474411048, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_dc3c49af492987e82b627d08a297e874 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_78cbbcf9c496b9a1be706760655ce475 = $(`<div id="html_78cbbcf9c496b9a1be706760655ce475" style="width: 100.0%; height: 100.0%;"><b>Teramo</b><br>Beni: 67</div>`)[0];
+                popup_dc3c49af492987e82b627d08a297e874.setContent(html_78cbbcf9c496b9a1be706760655ce475);
+            
+        
+
+        circle_marker_3480beea286249f4556771d605cf022d.bindPopup(popup_dc3c49af492987e82b627d08a297e874)
+        ;
+
+        
+    
+    
+            circle_marker_3480beea286249f4556771d605cf022d.bindTooltip(
+                `<div>
+                     Teramo: 67 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_de7f611781ef626204bb2ff9fcff173e = L.circleMarker(
+                [43.4636, 11.8783],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.016246953696182, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_186aa7aa4dc38395482e2c969c10b419 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_202bc17b76918c316154df4d7e8a2db3 = $(`<div id="html_202bc17b76918c316154df4d7e8a2db3" style="width: 100.0%; height: 100.0%;"><b>Terni</b><br>Beni: 4</div>`)[0];
+                popup_186aa7aa4dc38395482e2c969c10b419.setContent(html_202bc17b76918c316154df4d7e8a2db3);
+            
+        
+
+        circle_marker_de7f611781ef626204bb2ff9fcff173e.bindPopup(popup_186aa7aa4dc38395482e2c969c10b419)
+        ;
+
+        
+    
+    
+            circle_marker_de7f611781ef626204bb2ff9fcff173e.bindTooltip(
+                `<div>
+                     Terni: 4 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e00e78f3e5b76afc2546698552fe3fbc = L.circleMarker(
+                [45.0703, 7.6869],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.571080422420796, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_dc11305a0830e9c4788d81fad7ac7495 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a993ecf9e4f6ed237db016407d55065e = $(`<div id="html_a993ecf9e4f6ed237db016407d55065e" style="width: 100.0%; height: 100.0%;"><b>Torino</b><br>Beni: 633</div>`)[0];
+                popup_dc11305a0830e9c4788d81fad7ac7495.setContent(html_a993ecf9e4f6ed237db016407d55065e);
+            
+        
+
+        circle_marker_e00e78f3e5b76afc2546698552fe3fbc.bindPopup(popup_dc11305a0830e9c4788d81fad7ac7495)
+        ;
+
+        
+    
+    
+            circle_marker_e00e78f3e5b76afc2546698552fe3fbc.bindTooltip(
+                `<div>
+                     Torino: 633 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8778364a23c0bf56533ff3f8169bf3b0 = L.circleMarker(
+                [37.9755, 12.5133],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.85458976441917, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_77cfe1cee6f537c166f9c2d7dafe5de9 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ff79f9b562a11712ee44da89d4cfa57e = $(`<div id="html_ff79f9b562a11712ee44da89d4cfa57e" style="width: 100.0%; height: 100.0%;"><b>Trapani</b><br>Beni: 2,180</div>`)[0];
+                popup_77cfe1cee6f537c166f9c2d7dafe5de9.setContent(html_ff79f9b562a11712ee44da89d4cfa57e);
+            
+        
+
+        circle_marker_8778364a23c0bf56533ff3f8169bf3b0.bindPopup(popup_77cfe1cee6f537c166f9c2d7dafe5de9)
+        ;
+
+        
+    
+    
+            circle_marker_8778364a23c0bf56533ff3f8169bf3b0.bindTooltip(
+                `<div>
+                     Trapani: 2,180 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a07bd4c5f65d90608c90d52d80e5edce = L.circleMarker(
+                [45.8554, 9.3982],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.081234768480909, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_7a0d053e4e62b542bef68c83b135eabf = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ae965a34ac05649d388f156185432455 = $(`<div id="html_ae965a34ac05649d388f156185432455" style="width: 100.0%; height: 100.0%;"><b>Trento</b><br>Beni: 20</div>`)[0];
+                popup_7a0d053e4e62b542bef68c83b135eabf.setContent(html_ae965a34ac05649d388f156185432455);
+            
+        
+
+        circle_marker_a07bd4c5f65d90608c90d52d80e5edce.bindPopup(popup_7a0d053e4e62b542bef68c83b135eabf)
+        ;
+
+        
+    
+    
+            circle_marker_a07bd4c5f65d90608c90d52d80e5edce.bindTooltip(
+                `<div>
+                     Trento: 20 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f38af02b963058dfb915282c9fab9148 = L.circleMarker(
+                [45.6617, 12.2428],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.048740861088546, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_b3afa4e3a8b90e3ceabd04df712b7731 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b51beace0f055ac589986ae63923c9cd = $(`<div id="html_b51beace0f055ac589986ae63923c9cd" style="width: 100.0%; height: 100.0%;"><b>Treviso</b><br>Beni: 12</div>`)[0];
+                popup_b3afa4e3a8b90e3ceabd04df712b7731.setContent(html_b51beace0f055ac589986ae63923c9cd);
+            
+        
+
+        circle_marker_f38af02b963058dfb915282c9fab9148.bindPopup(popup_b3afa4e3a8b90e3ceabd04df712b7731)
+        ;
+
+        
+    
+    
+            circle_marker_f38af02b963058dfb915282c9fab9148.bindTooltip(
+                `<div>
+                     Treviso: 12 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f5e00ca7fd815c68f6c9e49fe491c08f = L.circleMarker(
+                [46.4983, 11.3548],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.069049553208774, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_80f76abe28c7c6126afe8fa657450a03 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_2d03c31972c63dc4a7dc81f171f2174d = $(`<div id="html_2d03c31972c63dc4a7dc81f171f2174d" style="width: 100.0%; height: 100.0%;"><b>Trieste</b><br>Beni: 17</div>`)[0];
+                popup_80f76abe28c7c6126afe8fa657450a03.setContent(html_2d03c31972c63dc4a7dc81f171f2174d);
+            
+        
+
+        circle_marker_f5e00ca7fd815c68f6c9e49fe491c08f.bindPopup(popup_80f76abe28c7c6126afe8fa657450a03)
+        ;
+
+        
+    
+    
+            circle_marker_f5e00ca7fd815c68f6c9e49fe491c08f.bindTooltip(
+                `<div>
+                     Trieste: 17 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0cee2ab6b0036428bac13911c0486aa7 = L.circleMarker(
+                [46.0664, 13.2369],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.069049553208774, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_e7bb0c4d293102600dff78736bd7a479 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e1d8a640485fc6357dbe2ea3221103b5 = $(`<div id="html_e1d8a640485fc6357dbe2ea3221103b5" style="width: 100.0%; height: 100.0%;"><b>Udine</b><br>Beni: 17</div>`)[0];
+                popup_e7bb0c4d293102600dff78736bd7a479.setContent(html_e1d8a640485fc6357dbe2ea3221103b5);
+            
+        
+
+        circle_marker_0cee2ab6b0036428bac13911c0486aa7.bindPopup(popup_e7bb0c4d293102600dff78736bd7a479)
+        ;
+
+        
+    
+    
+            circle_marker_0cee2ab6b0036428bac13911c0486aa7.bindTooltip(
+                `<div>
+                     Udine: 17 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6e1e95f3bb2fe724fc8f0333415d5316 = L.circleMarker(
+                [45.7369, 7.3204],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.129975629569456, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_f67ffd8ca6348377bd59adf148c3b155 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3218586067ae077561c5fa22b87ee8b6 = $(`<div id="html_3218586067ae077561c5fa22b87ee8b6" style="width: 100.0%; height: 100.0%;"><b>Valle d'Aosta/Vallée d'Aoste</b><br>Beni: 32</div>`)[0];
+                popup_f67ffd8ca6348377bd59adf148c3b155.setContent(html_3218586067ae077561c5fa22b87ee8b6);
+            
+        
+
+        circle_marker_6e1e95f3bb2fe724fc8f0333415d5316.bindPopup(popup_f67ffd8ca6348377bd59adf148c3b155)
+        ;
+
+        
+    
+    
+            circle_marker_6e1e95f3bb2fe724fc8f0333415d5316.bindTooltip(
+                `<div>
+                     Valle d'Aosta/Vallée d'Aoste: 32 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_59f57971f8f63f1f77ab321e009a792f = L.circleMarker(
+                [45.5844, 9.2744],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.852965069049553, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_e85378210d71f5b1740973dc8ad4cba4 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c68342ec30e1b540e180db0bad8a6dd6 = $(`<div id="html_c68342ec30e1b540e180db0bad8a6dd6" style="width: 100.0%; height: 100.0%;"><b>Varese</b><br>Beni: 210</div>`)[0];
+                popup_e85378210d71f5b1740973dc8ad4cba4.setContent(html_c68342ec30e1b540e180db0bad8a6dd6);
+            
+        
+
+        circle_marker_59f57971f8f63f1f77ab321e009a792f.bindPopup(popup_e85378210d71f5b1740973dc8ad4cba4)
+        ;
+
+        
+    
+    
+            circle_marker_59f57971f8f63f1f77ab321e009a792f.bindTooltip(
+                `<div>
+                     Varese: 210 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_78052b0cfac515c76c94e704dd11587d = L.circleMarker(
+                [45.4105, 11.8768],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.402112103980504, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_3dab3593845e1f19904e0344613b4ba1 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_cc006dcf3fc44ddf347d62799eeb451a = $(`<div id="html_cc006dcf3fc44ddf347d62799eeb451a" style="width: 100.0%; height: 100.0%;"><b>Venezia</b><br>Beni: 99</div>`)[0];
+                popup_3dab3593845e1f19904e0344613b4ba1.setContent(html_cc006dcf3fc44ddf347d62799eeb451a);
+            
+        
+
+        circle_marker_78052b0cfac515c76c94e704dd11587d.bindPopup(popup_3dab3593845e1f19904e0344613b4ba1)
+        ;
+
+        
+    
+    
+            circle_marker_78052b0cfac515c76c94e704dd11587d.bindTooltip(
+                `<div>
+                     Venezia: 99 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6ba8127900ca3951ab433d755b745976 = L.circleMarker(
+                [42.5626, 12.6444],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.064987814784728, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_24ec9479e99d95b55c3b9aab29f2a3a2 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_118e813c24b4738973af6e1e3dfb6e67 = $(`<div id="html_118e813c24b4738973af6e1e3dfb6e67" style="width: 100.0%; height: 100.0%;"><b>Verbano-Cusio-Ossola</b><br>Beni: 16</div>`)[0];
+                popup_24ec9479e99d95b55c3b9aab29f2a3a2.setContent(html_118e813c24b4738973af6e1e3dfb6e67);
+            
+        
+
+        circle_marker_6ba8127900ca3951ab433d755b745976.bindPopup(popup_24ec9479e99d95b55c3b9aab29f2a3a2)
+        ;
+
+        
+    
+    
+            circle_marker_6ba8127900ca3951ab433d755b745976.bindTooltip(
+                `<div>
+                     Verbano-Cusio-Ossola: 16 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_12486f3d76780264dbffcae3e7a75b7a = L.circleMarker(
+                [45.3324, 8.4197],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.227457351746548, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_94849007f13568fa9971548bd1ec1237 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_87764dfa4f87570f36c0def41300c477 = $(`<div id="html_87764dfa4f87570f36c0def41300c477" style="width: 100.0%; height: 100.0%;"><b>Vercelli</b><br>Beni: 56</div>`)[0];
+                popup_94849007f13568fa9971548bd1ec1237.setContent(html_87764dfa4f87570f36c0def41300c477);
+            
+        
+
+        circle_marker_12486f3d76780264dbffcae3e7a75b7a.bindPopup(popup_94849007f13568fa9971548bd1ec1237)
+        ;
+
+        
+    
+    
+            circle_marker_12486f3d76780264dbffcae3e7a75b7a.bindTooltip(
+                `<div>
+                     Vercelli: 56 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_20e04ae3fdbe88ee171cb347329bb502 = L.circleMarker(
+                [45.434, 12.3376],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.33306255077173, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_4ce2d692532557b67061c3377372a3b4 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_15d7993bff9c2b8894be1ca8c4fd2f51 = $(`<div id="html_15d7993bff9c2b8894be1ca8c4fd2f51" style="width: 100.0%; height: 100.0%;"><b>Verona</b><br>Beni: 82</div>`)[0];
+                popup_4ce2d692532557b67061c3377372a3b4.setContent(html_15d7993bff9c2b8894be1ca8c4fd2f51);
+            
+        
+
+        circle_marker_20e04ae3fdbe88ee171cb347329bb502.bindPopup(popup_4ce2d692532557b67061c3377372a3b4)
+        ;
+
+        
+    
+    
+            circle_marker_20e04ae3fdbe88ee171cb347329bb502.bindTooltip(
+                `<div>
+                     Verona: 82 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_580bf970fad79c747668330c5448cdfb = L.circleMarker(
+                [43.1121, 12.3886],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.701868399675061, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_cf011a7a003891ad6cdd13083ef5c2f0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_bf54ce7936490c58187947dcd48b7d6b = $(`<div id="html_bf54ce7936490c58187947dcd48b7d6b" style="width: 100.0%; height: 100.0%;"><b>Vibo Valentia</b><br>Beni: 419</div>`)[0];
+                popup_cf011a7a003891ad6cdd13083ef5c2f0.setContent(html_bf54ce7936490c58187947dcd48b7d6b);
+            
+        
+
+        circle_marker_580bf970fad79c747668330c5448cdfb.bindPopup(popup_cf011a7a003891ad6cdd13083ef5c2f0)
+        ;
+
+        
+    
+    
+            circle_marker_580bf970fad79c747668330c5448cdfb.bindTooltip(
+                `<div>
+                     Vibo Valentia: 419 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee6fb1132a85553746617e863f84b356 = L.circleMarker(
+                [45.8554, 9.3982],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.454914703493095, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_1d57b11b16eb88f07a580484a7578b79 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_8a015640fc99a98de32495cc02b32135 = $(`<div id="html_8a015640fc99a98de32495cc02b32135" style="width: 100.0%; height: 100.0%;"><b>Vicenza</b><br>Beni: 112</div>`)[0];
+                popup_1d57b11b16eb88f07a580484a7578b79.setContent(html_8a015640fc99a98de32495cc02b32135);
+            
+        
+
+        circle_marker_ee6fb1132a85553746617e863f84b356.bindPopup(popup_1d57b11b16eb88f07a580484a7578b79)
+        ;
+
+        
+    
+    
+            circle_marker_ee6fb1132a85553746617e863f84b356.bindTooltip(
+                `<div>
+                     Vicenza: 112 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cbc37d9e82385d3f1be6b80cf3699b6e = L.circleMarker(
+                [43.4159, 11.17],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.190901705930138, "stroke": true, "weight": 3}
+            ).addTo(map_786873d6d4f2c114adf65102d13b2c18);
+        
+    
+        var popup_34ed9f60b6d38bd33b71e305c7596a0f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_56fdb8e6e7dea4f797b6f7d83e55a1ce = $(`<div id="html_56fdb8e6e7dea4f797b6f7d83e55a1ce" style="width: 100.0%; height: 100.0%;"><b>Viterbo</b><br>Beni: 47</div>`)[0];
+                popup_34ed9f60b6d38bd33b71e305c7596a0f.setContent(html_56fdb8e6e7dea4f797b6f7d83e55a1ce);
+            
+        
+
+        circle_marker_cbc37d9e82385d3f1be6b80cf3699b6e.bindPopup(popup_34ed9f60b6d38bd33b71e305c7596a0f)
+        ;
+
+        
+    
+    
+            circle_marker_cbc37d9e82385d3f1be6b80cf3699b6e.bindTooltip(
+                `<div>
+                     Viterbo: 47 beni
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
