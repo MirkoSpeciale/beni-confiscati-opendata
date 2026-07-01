@@ -1,0 +1,12 @@
+# File scaricati in precedenza (duplicati nella root)
+query.csv
+query2.csv
+
+# Cache Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# File di sistema
+.DS_Store
+Thumbs.db
